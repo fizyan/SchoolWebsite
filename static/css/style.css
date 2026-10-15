@@ -1934,7 +1934,7 @@ body {
 .about-hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url("/static/images/campus.jpg");
+    background-image: url("/static/images/school-hero.jpg");
     background-size: cover;
     background-position: center;
     transform: scale(1.03);
@@ -3076,7 +3076,7 @@ body {
 .academics-hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url("/static/images/campus.jpg");
+    background-image: url("/static/images/school-hero.jpg");
     background-size: cover;
     background-position: center;
     transform: scale(1.03);
@@ -6325,7 +6325,7 @@ body {
     overflow: hidden;
     background:
         linear-gradient(135deg, rgba(7, 23, 73, 0.96), rgba(25, 53, 143, 0.86)),
-        url("../images/campus.jpg") center/cover no-repeat;
+        url("../images/school-hero.jpg") center/cover no-repeat;
 }
 
 .events-hero-overlay {
@@ -6775,7 +6775,7 @@ body {
     overflow: hidden;
     background:
         linear-gradient(135deg, rgba(7, 23, 73, 0.96), rgba(25, 53, 143, 0.84)),
-        url("../images/campus.jpg") center/cover no-repeat;
+        url("../images/school-hero.jpg") center/cover no-repeat;
 }
 
 .gallery-hero-overlay {
@@ -7270,7 +7270,7 @@ body {
     overflow: hidden;
     background:
         linear-gradient(120deg, rgba(7, 23, 73, 0.97), rgba(15, 31, 82, 0.88)),
-        url("../images/campus.jpg") center/cover no-repeat;
+        url("../images/school-hero.jpg") center/cover no-repeat;
 }
 
 .contact-hero-overlay {
@@ -7812,7 +7812,7 @@ body {
     overflow: hidden;
     background:
         linear-gradient(120deg, rgba(7, 23, 73, 0.98), rgba(15, 31, 82, 0.82)),
-        url("../images/campus.jpg") center/cover no-repeat;
+        url("../images/school-hero.jpg") center/cover no-repeat;
 }
 
 .admission-hero-overlay {
@@ -8410,7 +8410,7 @@ body {
     overflow: hidden;
     background:
         linear-gradient(120deg, rgba(7, 23, 73, 0.97), rgba(15, 31, 82, 0.78)),
-        url("../images/campus.jpg") center/cover no-repeat;
+        url("../images/school-hero.jpg") center/cover no-repeat;
 }
 
 .facilities-hero-overlay {
