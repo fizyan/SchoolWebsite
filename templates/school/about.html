@@ -1,0 +1,563 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About Us | School Name{% endblock %}
+
+{% block content %}
+
+<!-- =========================================================
+     ABOUT HERO
+     ========================================================= -->
+<section class="about-hero">
+
+    <div class="about-hero-bg"></div>
+    <div class="about-hero-overlay"></div>
+
+    <div class="container about-hero-container">
+
+        <div class="about-hero-content">
+
+            <div class="hero-label">
+                <span></span>
+                ABOUT OUR SCHOOL
+            </div>
+
+            <h1>
+                Shaping Minds.<br>
+                <em>Building Character.</em>
+            </h1>
+
+            <p>
+                A learning community dedicated to academic excellence,
+                character development and preparing students for a
+                changing world.
+            </p>
+
+            <div class="about-breadcrumb">
+                <a href="{% url 'school:home' %}">Home</a>
+                <i class="bi bi-chevron-right"></i>
+                <span>About Us</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     OUR STORY
+     ========================================================= -->
+<section class="section about-story">
+
+    <div class="container">
+
+        <div class="about-story-grid">
+
+            <div class="about-story-image">
+
+                <img src="{% static 'images/campus.jpg' %}" alt="Our School Campus">
+
+                <div class="about-image-badge">
+                    <strong>25+</strong>
+                    <span>Years of<br>Excellence</span>
+                </div>
+
+            </div>
+
+
+            <div class="about-story-content">
+
+                <div class="section-tag">
+                    <span></span>
+                    OUR STORY
+                </div>
+
+                <h2>
+                    More than a school.<br>
+                    <em>A place to belong.</em>
+                </h2>
+
+                <p>
+                    We believe that education should do more than prepare
+                    students for examinations. It should prepare them for
+                    life.
+                </p>
+
+                <p>
+                    Our school provides a supportive and inspiring
+                    environment where students are encouraged to ask
+                    questions, explore ideas, develop confidence and
+                    discover their individual strengths.
+                </p>
+
+                <p>
+                    With a strong focus on academics, character,
+                    creativity and responsible citizenship, we aim to
+                    help every student become a confident and capable
+                    individual.
+                </p>
+
+                <div class="about-story-points">
+
+                    <div>
+                        <i class="bi bi-check2-circle"></i>
+                        <span>Student-Centred Learning</span>
+                    </div>
+
+                    <div>
+                        <i class="bi bi-check2-circle"></i>
+                        <span>Academic Excellence</span>
+                    </div>
+
+                    <div>
+                        <i class="bi bi-check2-circle"></i>
+                        <span>Character & Leadership</span>
+                    </div>
+
+                    <div>
+                        <i class="bi bi-check2-circle"></i>
+                        <span>Innovation & Creativity</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     VISION / MISSION
+     ========================================================= -->
+<section class="about-purpose">
+
+    <div class="container">
+
+        <div class="about-purpose-header">
+
+            <div class="section-tag">
+                <span></span>
+                OUR PURPOSE
+            </div>
+
+            <h2>
+                What guides
+                <em>everything we do.</em>
+            </h2>
+
+            <p>
+                Every decision we make is driven by our commitment to
+                creating meaningful learning experiences for every child.
+            </p>
+
+        </div>
+
+
+        <div class="about-purpose-grid">
+
+            <div class="purpose-card">
+
+                <div class="purpose-number">01</div>
+
+                <div class="purpose-icon">
+                    <i class="bi bi-eye"></i>
+                </div>
+
+                <h3>Our Vision</h3>
+
+                <p>
+                    To create confident, compassionate and capable
+                    individuals who are prepared to contribute positively
+                    to society and lead with purpose.
+                </p>
+
+                <div class="purpose-line"></div>
+
+            </div>
+
+
+            <div class="purpose-card featured">
+
+                <div class="purpose-number">02</div>
+
+                <div class="purpose-icon">
+                    <i class="bi bi-bullseye"></i>
+                </div>
+
+                <h3>Our Mission</h3>
+
+                <p>
+                    To provide a safe, inclusive and stimulating
+                    environment where every student can learn,
+                    grow and achieve their full potential.
+                </p>
+
+                <div class="purpose-line"></div>
+
+            </div>
+
+
+            <div class="purpose-card">
+
+                <div class="purpose-number">03</div>
+
+                <div class="purpose-icon">
+                    <i class="bi bi-stars"></i>
+                </div>
+
+                <h3>Our Commitment</h3>
+
+                <p>
+                    To continuously improve teaching, embrace innovation
+                    and build strong partnerships between students,
+                    parents, teachers and the wider community.
+                </p>
+
+                <div class="purpose-line"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     OUR VALUES
+     ========================================================= -->
+<section class="section about-values">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-tag">
+                <span></span>
+                OUR VALUES
+            </div>
+
+            <div>
+
+                <h2>
+                    Values that
+                    <em>shape us.</em>
+                </h2>
+
+                <p>
+                    We want our students to leave school with more than
+                    knowledge — with values that stay with them for life.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="values-grid">
+
+            <div class="value-card">
+
+                <div class="value-icon">
+                    <i class="bi bi-award"></i>
+                </div>
+
+                <h3>Excellence</h3>
+
+                <p>
+                    We encourage students to pursue their best in
+                    everything they do.
+                </p>
+
+                <span class="value-number">01</span>
+
+            </div>
+
+
+            <div class="value-card">
+
+                <div class="value-icon">
+                    <i class="bi bi-heart"></i>
+                </div>
+
+                <h3>Integrity</h3>
+
+                <p>
+                    We develop honesty, responsibility and respect
+                    in every member of our community.
+                </p>
+
+                <span class="value-number">02</span>
+
+            </div>
+
+
+            <div class="value-card">
+
+                <div class="value-icon">
+                    <i class="bi bi-lightbulb"></i>
+                </div>
+
+                <h3>Curiosity</h3>
+
+                <p>
+                    We inspire students to question, explore and
+                    discover new possibilities.
+                </p>
+
+                <span class="value-number">03</span>
+
+            </div>
+
+
+            <div class="value-card">
+
+                <div class="value-icon">
+                    <i class="bi bi-people"></i>
+                </div>
+
+                <h3>Community</h3>
+
+                <p>
+                    We believe strong relationships create stronger
+                    learners and a stronger school.
+                </p>
+
+                <span class="value-number">04</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PRINCIPAL MESSAGE
+     ========================================================= -->
+<section class="about-principal">
+
+    <div class="container">
+
+        <div class="about-principal-grid">
+
+            <div class="about-principal-image">
+
+                <img src="{% static 'images/principal.jpg' %}" alt="School Principal">
+
+                <div class="principal-image-label">
+                    <span>LEADERSHIP</span>
+                    <strong>Principal's Office</strong>
+                </div>
+
+            </div>
+
+
+            <div class="about-principal-content">
+
+                <div class="section-tag">
+                    <span></span>
+                    MESSAGE FROM THE PRINCIPAL
+                </div>
+
+                <h2>
+                    Education begins with
+                    <em>possibility.</em>
+                </h2>
+
+                <div class="quote-mark">
+                    <i class="bi bi-quote"></i>
+                </div>
+
+                <blockquote>
+                    Every child is capable of achieving remarkable things
+                    when given the right environment, encouragement and
+                    opportunity to grow.
+                </blockquote>
+
+                <p>
+                    Our aim is to ensure that every student feels seen,
+                    valued and supported throughout their journey with us.
+                    Together with our teachers and parents, we work to
+                    create an environment where students can confidently
+                    discover who they are and who they can become.
+                </p>
+
+                <div class="principal-signature">
+
+                    <strong>School Principal</strong>
+                    <span>School Name</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     WHY CHOOSE US
+     ========================================================= -->
+<section class="section about-why">
+
+    <div class="container">
+
+        <div class="about-why-grid">
+
+            <div class="about-why-heading">
+
+                <div class="section-tag">
+                    <span></span>
+                    WHY CHOOSE US
+                </div>
+
+                <h2>
+                    A foundation for
+                    <em>tomorrow.</em>
+                </h2>
+
+                <p>
+                    From the classroom to the campus, we create
+                    opportunities that help students develop academically,
+                    socially and personally.
+                </p>
+
+                <a href="{% url 'school:academics' %}" class="text-link">
+                    Explore Academics
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="about-why-list">
+
+                <div class="why-item">
+
+                    <span class="why-number">01</span>
+
+                    <div>
+                        <h3>Experienced Faculty</h3>
+                        <p>
+                            Dedicated educators who understand the
+                            individual needs of every learner.
+                        </p>
+                    </div>
+
+                    <i class="bi bi-arrow-up-right"></i>
+
+                </div>
+
+
+                <div class="why-item">
+
+                    <span class="why-number">02</span>
+
+                    <div>
+                        <h3>Modern Learning</h3>
+                        <p>
+                            Learning experiences designed around
+                            technology, creativity and real-world skills.
+                        </p>
+                    </div>
+
+                    <i class="bi bi-arrow-up-right"></i>
+
+                </div>
+
+
+                <div class="why-item">
+
+                    <span class="why-number">03</span>
+
+                    <div>
+                        <h3>Holistic Development</h3>
+                        <p>
+                            Equal importance to academics, activities,
+                            leadership and character.
+                        </p>
+                    </div>
+
+                    <i class="bi bi-arrow-up-right"></i>
+
+                </div>
+
+
+                <div class="why-item">
+
+                    <span class="why-number">04</span>
+
+                    <div>
+                        <h3>Supportive Community</h3>
+                        <p>
+                            A welcoming environment where students,
+                            teachers and families grow together.
+                        </p>
+                    </div>
+
+                    <i class="bi bi-arrow-up-right"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT CTA
+     ========================================================= -->
+<section class="about-cta">
+
+    <div class="container">
+
+        <div class="about-cta-inner">
+
+            <div>
+
+                <div class="section-tag">
+                    <span></span>
+                    JOIN OUR COMMUNITY
+                </div>
+
+                <h2>
+                    Ready to begin the
+                    <em>journey?</em>
+                </h2>
+
+                <p>
+                    Discover a school where every student is encouraged
+                    to learn, grow and achieve.
+                </p>
+
+            </div>
+
+            <a href="{% url 'admissions:home' %}" class="btn-light">
+                Explore Admissions
+                <i class="bi bi-arrow-up-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

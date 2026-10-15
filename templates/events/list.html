@@ -1,0 +1,201 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Events | School Name{% endblock %}
+
+{% block content %}
+
+<section class="events-hero">
+    <div class="events-hero-overlay"></div>
+
+    <div class="events-hero-content">
+        <span class="events-eyebrow">SCHOOL EVENTS</span>
+
+        <h1>
+            Moments That<br>
+            <span>Bring Us Together</span>
+        </h1>
+
+        <p>
+            Discover upcoming activities, celebrations, academic events,
+            competitions and memorable moments from our school community.
+        </p>
+
+        <div class="events-breadcrumb">
+            <a href="{% url 'school:home' %}">Home</a>
+            <i class="bi bi-chevron-right"></i>
+            <span>Events</span>
+        </div>
+    </div>
+</section>
+
+
+<section class="events-section">
+    <div class="events-container">
+
+        <div class="events-heading">
+            <div>
+                <span class="section-label">OUR CALENDAR</span>
+                <h2>Upcoming & Recent Events</h2>
+            </div>
+
+            <p>
+                Stay connected with everything happening across our
+                school campus.
+            </p>
+        </div>
+
+
+        {% if events %}
+
+        <div class="events-grid">
+
+            {% for event in events %}
+
+            <article class="event-card">
+
+                <div class="event-image">
+
+                    {% if event.image %}
+                    <img src="{{ event.image.url }}" alt="{{ event.title }}">
+                    {% else %}
+                    <div class="event-image-placeholder">
+                        <i class="bi bi-calendar-event"></i>
+                    </div>
+                    {% endif %}
+
+                    <div class="event-date">
+                        <strong>{{ event.event_date|date:"d" }}</strong>
+                        <span>{{ event.event_date|date:"M" }}</span>
+                    </div>
+
+                </div>
+
+
+                <div class="event-content">
+
+                    <div class="event-meta">
+
+                        {% if event.start_time %}
+                        <span>
+                            <i class="bi bi-clock"></i>
+                            {{ event.start_time|time:"g:i A" }}
+
+                            {% if event.end_time %}
+                            - {{ event.end_time|time:"g:i A" }}
+                            {% endif %}
+                        </span>
+                        {% endif %}
+
+                        {% if event.location %}
+                        <span>
+                            <i class="bi bi-geo-alt"></i>
+                            {{ event.location }}
+                        </span>
+                        {% endif %}
+
+                    </div>
+
+
+                    <h3>{{ event.title }}</h3>
+
+                    <p>{{ event.description }}</p>
+
+
+                    <div class="event-footer">
+
+                        <span class="event-status">
+                            <i class="bi bi-check-circle-fill"></i>
+                            Published Event
+                        </span>
+
+                        <span class="event-arrow">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <div class="events-empty">
+
+            <div class="events-empty-icon">
+                <i class="bi bi-calendar-x"></i>
+            </div>
+
+            <h3>No Events Available</h3>
+
+            <p>
+                There are currently no published events.
+                Please check again soon.
+            </p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+</section>
+
+
+<section class="events-highlight">
+
+    <div class="events-highlight-container">
+
+        <div class="events-highlight-icon">
+            <i class="bi bi-calendar2-heart"></i>
+        </div>
+
+        <div>
+
+            <span class="section-label">STAY CONNECTED</span>
+
+            <h2>Every Event Creates a Memory</h2>
+
+            <p>
+                From academic achievements to cultural celebrations,
+                every school event is an opportunity to learn, participate
+                and grow together.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="events-cta">
+
+    <div class="events-cta-container">
+
+        <div>
+
+            <span class="section-label">DISCOVER MORE</span>
+
+            <h2>Be Part of Our School Community</h2>
+
+            <p>
+                Explore our academics, faculty and digital resources.
+            </p>
+
+        </div>
+
+        <a href="{% url 'school:about' %}" class="events-cta-button">
+            Explore Our School
+            <i class="bi bi-arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

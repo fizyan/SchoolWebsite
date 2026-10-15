@@ -1,0 +1,650 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Admissions | School Name{% endblock %}
+
+{% block content %}
+
+<!-- Admissions Hero -->
+<section class="admission-hero">
+
+    <div class="admission-hero-overlay"></div>
+
+    <div class="container admission-hero-container">
+
+        <div class="admission-hero-content">
+
+            <div class="admission-eyebrow">
+                Admissions Open
+            </div>
+
+            <h1>
+                Begin Your Child's
+                Journey With Us
+            </h1>
+
+            <p>
+                Take the first step towards a brighter future.
+                Submit an admission enquiry and our team will
+                get in touch with you.
+            </p>
+
+            <div class="d-flex flex-wrap gap-3">
+
+                <a href="#admission-enquiry" class="admission-primary-btn">
+                    Enquire Now
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+
+                <a href="{% url 'school:contact' %}" class="admission-secondary-btn">
+                    Contact School
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Introduction -->
+<section class="admission-intro">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+
+                <div class="admission-intro-image">
+
+                    <img src="{% static 'images/campus.jpg' %}" alt="School Campus">
+
+                    <div class="admission-image-badge">
+
+                        <strong>01</strong>
+
+                        <span>
+                            Step towards
+                            excellence
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6">
+
+                <div class="admission-intro-content">
+
+                    <span class="section-label">
+                        Why Choose Us
+                    </span>
+
+                    <h2>
+                        A Place Where
+                        Every Student Matters
+                    </h2>
+
+                    <p>
+                        We believe every child deserves an environment
+                        where they can learn confidently, discover their
+                        strengths and develop into responsible individuals.
+                    </p>
+
+                    <p>
+                        Our academic approach combines strong fundamentals,
+                        modern learning methods and opportunities beyond
+                        the classroom.
+                    </p>
+
+
+                    <div class="admission-intro-points">
+
+                        <div class="admission-intro-point">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Experienced and dedicated faculty</span>
+                        </div>
+
+                        <div class="admission-intro-point">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Modern learning infrastructure</span>
+                        </div>
+
+                        <div class="admission-intro-point">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Safe and student-friendly campus</span>
+                        </div>
+
+                        <div class="admission-intro-point">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Focus on holistic development</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Admission Highlights -->
+<section class="admission-highlights">
+
+    <div class="container">
+
+        <div class="admission-section-heading">
+
+            <span>
+                Admission Highlights
+            </span>
+
+            <h2>
+                What Makes Our School Different
+            </h2>
+
+            <p>
+                A learning environment designed to help students
+                grow academically, personally and socially.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="admission-highlight-card">
+
+                    <div class="admission-highlight-icon">
+                        <i class="bi bi-mortarboard"></i>
+                    </div>
+
+                    <h3>
+                        Quality Education
+                    </h3>
+
+                    <p>
+                        Strong academic foundations supported by
+                        experienced educators.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="admission-highlight-card">
+
+                    <div class="admission-highlight-icon">
+                        <i class="bi bi-laptop"></i>
+                    </div>
+
+                    <h3>
+                        Smart Learning
+                    </h3>
+
+                    <p>
+                        Technology-enabled learning experiences
+                        for modern students.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="admission-highlight-card">
+
+                    <div class="admission-highlight-icon">
+                        <i class="bi bi-people"></i>
+                    </div>
+
+                    <h3>
+                        Student Support
+                    </h3>
+
+                    <p>
+                        Personal attention and guidance throughout
+                        the student's journey.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="admission-highlight-card">
+
+                    <div class="admission-highlight-icon">
+                        <i class="bi bi-stars"></i>
+                    </div>
+
+                    <h3>
+                        Holistic Growth
+                    </h3>
+
+                    <p>
+                        Opportunities to develop academic, creative
+                        and leadership skills.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Admission Process -->
+<section class="admission-process">
+
+    <div class="container">
+
+        <div class="admission-section-heading">
+
+            <span>
+                Simple Process
+            </span>
+
+            <h2>
+                How Admission Works
+            </h2>
+
+        </div>
+
+
+        <div class="admission-steps">
+
+            <div class="admission-step">
+
+                <div class="admission-step-number">
+                    01
+                </div>
+
+                <div class="admission-step-content">
+
+                    <h3>
+                        Submit Enquiry
+                    </h3>
+
+                    <p>
+                        Fill out the admission enquiry form
+                        with the required details.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="admission-step">
+
+                <div class="admission-step-number">
+                    02
+                </div>
+
+                <div class="admission-step-content">
+
+                    <h3>
+                        School Contact
+                    </h3>
+
+                    <p>
+                        Our admission team will contact you
+                        to discuss the next steps.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="admission-step">
+
+                <div class="admission-step-number">
+                    03
+                </div>
+
+                <div class="admission-step-content">
+
+                    <h3>
+                        Visit & Counselling
+                    </h3>
+
+                    <p>
+                        Visit the campus and discuss your
+                        child's educational requirements.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="admission-step">
+
+                <div class="admission-step-number">
+                    04
+                </div>
+
+                <div class="admission-step-content">
+
+                    <h3>
+                        Complete Admission
+                    </h3>
+
+                    <p>
+                        Complete the required admission formalities
+                        and welcome your child to our school.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Working Enquiry Form -->
+<section class="admission-enquiry" id="admission-enquiry">
+
+    <div class="container">
+
+        <div class="row g-5 align-items-start">
+
+            <!-- Form Information -->
+            <div class="col-lg-5">
+
+                <div class="admission-enquiry-info">
+
+                    <span>
+                        Admission Enquiry
+                    </span>
+
+                    <h2>
+                        Let's Start
+                        Your Conversation
+                    </h2>
+
+                    <p>
+                        Fill in the form and our admission team
+                        will get in touch with you shortly.
+                    </p>
+
+
+                    <div class="admission-contact-item">
+
+                        <i class="bi bi-telephone"></i>
+
+                        <div>
+                            <strong>Call Us</strong>
+                            <span>+91 00000 00000</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="admission-contact-item">
+
+                        <i class="bi bi-envelope"></i>
+
+                        <div>
+                            <strong>Email</strong>
+                            <span>admissions@school.com</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="admission-contact-item">
+
+                        <i class="bi bi-clock"></i>
+
+                        <div>
+                            <strong>Office Hours</strong>
+                            <span>Monday – Saturday</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Form -->
+            <div class="col-lg-7">
+
+                <div class="admission-form-card">
+
+                    <div class="mb-4">
+
+                        <span class="section-label">
+                            Enquiry Form
+                        </span>
+
+                        <h3>
+                            Tell Us About Your Child
+                        </h3>
+
+                        <p>
+                            All fields marked with
+                            <strong>*</strong> are required.
+                        </p>
+
+                    </div>
+
+
+                    {% if messages %}
+
+                    {% for message in messages %}
+
+                    <div class="alert alert-success mb-4">
+                        <i class="bi bi-check-circle-fill me-2"></i>
+                        {{ message }}
+                    </div>
+
+                    {% endfor %}
+
+                    {% endif %}
+
+
+                    {% if form.non_field_errors %}
+
+                    <div class="alert alert-danger">
+
+                        {{ form.non_field_errors }}
+
+                    </div>
+
+                    {% endif %}
+
+
+                    <form method="post" class="admission-form" novalidate>
+
+                        {% csrf_token %}
+
+
+                        <div class="row g-4">
+
+                            <div class="col-md-6">
+
+                                <label for="{{ form.parent_name.id_for_label }}">
+                                    Parent / Guardian Name *
+                                </label>
+
+                                {{ form.parent_name }}
+
+                                {% for error in form.parent_name.errors %}
+                                <small class="text-danger">
+                                    {{ error }}
+                                </small>
+                                {% endfor %}
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <label for="{{ form.student_name.id_for_label }}">
+                                    Student Name *
+                                </label>
+
+                                {{ form.student_name }}
+
+                                {% for error in form.student_name.errors %}
+                                <small class="text-danger">
+                                    {{ error }}
+                                </small>
+                                {% endfor %}
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <label for="{{ form.phone.id_for_label }}">
+                                    Phone Number *
+                                </label>
+
+                                {{ form.phone }}
+
+                                {% for error in form.phone.errors %}
+                                <small class="text-danger">
+                                    {{ error }}
+                                </small>
+                                {% endfor %}
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <label for="{{ form.email.id_for_label }}">
+                                    Email Address
+                                </label>
+
+                                {{ form.email }}
+
+                                {% for error in form.email.errors %}
+                                <small class="text-danger">
+                                    {{ error }}
+                                </small>
+                                {% endfor %}
+
+                            </div>
+
+
+                            <div class="col-12">
+
+                                <label for="{{ form.class_interested.id_for_label }}">
+                                    Class Interested In *
+                                </label>
+
+                                {{ form.class_interested }}
+
+                                {% for error in form.class_interested.errors %}
+                                <small class="text-danger">
+                                    {{ error }}
+                                </small>
+                                {% endfor %}
+
+                            </div>
+
+
+                            <div class="col-12">
+
+                                <label for="{{ form.message.id_for_label }}">
+                                    Message
+                                </label>
+
+                                {{ form.message }}
+
+                                {% for error in form.message.errors %}
+                                <small class="text-danger">
+                                    {{ error }}
+                                </small>
+                                {% endfor %}
+
+                            </div>
+
+
+                            <div class="col-12">
+
+                                <button type="submit" class="admission-submit-btn">
+                                    Submit Admission Enquiry
+                                    <i class="bi bi-arrow-right"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Final CTA -->
+<section class="admission-final-cta">
+
+    <div class="container">
+
+        <div class="admission-final-inner">
+
+            <h2>
+                Give Your Child a Strong Start
+            </h2>
+
+            <p>
+                We look forward to welcoming your family
+                into our school community.
+            </p>
+
+            <a href="{% url 'school:contact' %}" class="admission-final-btn">
+                Contact School
+                <i class="bi bi-arrow-up-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

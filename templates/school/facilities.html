@@ -1,0 +1,443 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Facilities | School Name{% endblock %}
+
+{% block content %}
+
+<!-- Premium Facilities Hero -->
+<section class="facilities-hero">
+
+    <div class="facilities-hero-overlay"></div>
+
+    <div class="container facilities-hero-container">
+        <div class="facilities-hero-content">
+
+            <div class="facilities-eyebrow">
+                Campus & Infrastructure
+            </div>
+
+            <h1>Our Facilities</h1>
+
+            <p>
+                A modern, safe and inspiring campus designed to provide
+                students with the best environment for learning, growth
+                and creativity.
+            </p>
+
+            <div class="facilities-breadcrumb">
+                <a href="{% url 'school:home' %}">Home</a>
+                <span> / </span>
+                <span>Facilities</span>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+<!-- Introduction -->
+<section class="facilities-intro">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+
+                <div class="facilities-intro-image">
+
+                    <div class="facilities-image-card">
+                        <img src="{% static 'images/campus.jpg' %}" alt="School Campus">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6">
+
+                <div class="facilities-intro-content">
+
+                    <span>Designed For Excellence</span>
+
+                    <h2>
+                        A Campus That Inspires
+                        Every Student
+                    </h2>
+
+                    <p>
+                        Our school provides a thoughtfully designed campus
+                        where students can learn, explore and develop their
+                        talents in a safe and positive environment.
+                    </p>
+
+                    <p>
+                        From modern classrooms and technology-enabled
+                        laboratories to sports and creative spaces, every
+                        facility is designed to support the complete
+                        development of our students.
+                    </p>
+
+
+                    <div class="facilities-intro-points">
+
+                        <div class="facilities-intro-point">
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            <div>
+                                <strong>Safe & Secure Campus</strong>
+                                <div>
+                                    A welcoming environment focused on
+                                    student safety and wellbeing.
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="facilities-intro-point">
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            <div>
+                                <strong>Modern Learning Environment</strong>
+                                <div>
+                                    Technology and infrastructure that make
+                                    learning engaging and effective.
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="facilities-intro-point">
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            <div>
+                                <strong>Holistic Development</strong>
+                                <div>
+                                    Academic, physical, creative and social
+                                    development under one campus.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Facilities -->
+<section class="facilities-grid-section">
+
+    <div class="container">
+
+        <div class="facilities-heading">
+
+            <span>Campus Facilities</span>
+
+            <h2>
+                Everything Students Need
+            </h2>
+
+            <p>
+                Our facilities are designed to create a balanced,
+                comfortable and future-ready learning experience.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- Facility 01 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="facility-premium-card">
+
+                    <div class="facility-number">
+                        01
+                    </div>
+
+                    <div class="facility-premium-icon">
+                        <i class="bi bi-building"></i>
+                    </div>
+
+                    <h3>Smart Classrooms</h3>
+
+                    <p>
+                        Spacious and technology-enabled classrooms that
+                        encourage interactive and engaging learning.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Facility 02 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="facility-premium-card">
+
+                    <div class="facility-number">
+                        02
+                    </div>
+
+                    <div class="facility-premium-icon">
+                        <i class="bi bi-pc-display"></i>
+                    </div>
+
+                    <h3>Computer Labs</h3>
+
+                    <p>
+                        Modern computer facilities that help students build
+                        strong digital and technical skills.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Facility 03 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="facility-premium-card">
+
+                    <div class="facility-number">
+                        03
+                    </div>
+
+                    <div class="facility-premium-icon">
+                        <i class="bi bi-flask"></i>
+                    </div>
+
+                    <h3>Science Laboratories</h3>
+
+                    <p>
+                        Well-equipped laboratories where students can
+                        explore science through practical experiences.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Facility 04 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="facility-premium-card">
+
+                    <div class="facility-number">
+                        04
+                    </div>
+
+                    <div class="facility-premium-icon">
+                        <i class="bi bi-book"></i>
+                    </div>
+
+                    <h3>Digital Library</h3>
+
+                    <p>
+                        A resource-rich library with books and digital
+                        learning materials for students and teachers.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Facility 05 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="facility-premium-card">
+
+                    <div class="facility-number">
+                        05
+                    </div>
+
+                    <div class="facility-premium-icon">
+                        <i class="bi bi-trophy"></i>
+                    </div>
+
+                    <h3>Sports Facilities</h3>
+
+                    <p>
+                        Dedicated spaces that encourage fitness, teamwork,
+                        discipline and a healthy lifestyle.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Facility 06 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="facility-premium-card">
+
+                    <div class="facility-number">
+                        06
+                    </div>
+
+                    <div class="facility-premium-icon">
+                        <i class="bi bi-palette"></i>
+                    </div>
+
+                    <h3>Creative Spaces</h3>
+
+                    <p>
+                        Dedicated areas that encourage art, creativity,
+                        innovation and self-expression.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Student Experience -->
+<section class="facilities-experience">
+
+    <div class="container">
+
+        <div class="facilities-experience-heading">
+
+            <h2>
+                More Than Just Classrooms
+            </h2>
+
+            <p>
+                We believe that meaningful education happens both inside
+                and outside the classroom.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="experience-box">
+
+                    <i class="bi bi-lightbulb"></i>
+
+                    <h4>Innovation</h4>
+
+                    <p>
+                        Encouraging students to think differently,
+                        question ideas and solve problems creatively.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="experience-box">
+
+                    <i class="bi bi-people"></i>
+
+                    <h4>Community</h4>
+
+                    <p>
+                        Building collaboration, friendship and respect
+                        through a strong school community.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="experience-box">
+
+                    <i class="bi bi-heart-pulse"></i>
+
+                    <h4>Wellbeing</h4>
+
+                    <p>
+                        Supporting the physical, emotional and social
+                        wellbeing of every student.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="experience-box">
+
+                    <i class="bi bi-stars"></i>
+
+                    <h4>Growth</h4>
+
+                    <p>
+                        Helping students discover their strengths and
+                        prepare confidently for their future.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Final CTA -->
+<section class="facilities-cta">
+
+    <div class="container">
+
+        <div class="facilities-cta-inner">
+
+            <h2>
+                Come & Experience Our Campus
+            </h2>
+
+            <p>
+                Discover a learning environment where students are
+                encouraged to learn, explore and grow.
+            </p>
+
+            <a href="{% url 'school:contact' %}" class="facilities-cta-btn">
+                Contact Our School
+                <i class="bi bi-arrow-up-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,587 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Academics | School Name{% endblock %}
+
+{% block content %}
+
+<!-- =========================================================
+     ACADEMICS HERO
+     ========================================================= -->
+<section class="academics-hero">
+
+    <div class="academics-hero-bg"></div>
+    <div class="academics-hero-overlay"></div>
+
+    <div class="container academics-hero-container">
+
+        <div class="academics-hero-content">
+
+            <div class="hero-label">
+                <span></span>
+                ACADEMIC EXCELLENCE
+            </div>
+
+            <h1>
+                Learning with<br>
+                <em>Purpose.</em>
+            </h1>
+
+            <p>
+                A balanced academic journey designed to build strong
+                foundations, independent thinking and the confidence
+                to shape the future.
+            </p>
+
+            <div class="about-breadcrumb">
+                <a href="{% url 'school:home' %}">Home</a>
+                <i class="bi bi-chevron-right"></i>
+                <span>Academics</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     INTRO
+     ========================================================= -->
+<section class="section academics-intro">
+
+    <div class="container">
+
+        <div class="academics-intro-grid">
+
+            <div>
+
+                <div class="section-tag">
+                    <span></span>
+                    OUR APPROACH
+                </div>
+
+                <h2>
+                    Education that builds
+                    <em>more than knowledge.</em>
+                </h2>
+
+            </div>
+
+            <div>
+
+                <p>
+                    Our academic programme combines strong fundamentals
+                    with creativity, technology, collaboration and
+                    real-world learning.
+                </p>
+
+                <p>
+                    Students are encouraged to think independently,
+                    communicate confidently and develop the skills
+                    needed for lifelong learning.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ACADEMIC LEVELS
+     ========================================================= -->
+<section class="section academic-levels">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-tag">
+                <span></span>
+                ACADEMIC LEVELS
+            </div>
+
+            <div>
+
+                <h2>
+                    Every stage has a
+                    <em>purpose.</em>
+                </h2>
+
+                <p>
+                    A progressive learning journey that grows with
+                    every student.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="academic-level-grid">
+
+            <!-- PRIMARY -->
+            <article class="academic-level-card">
+
+                <div class="academic-level-image">
+
+                    <img src="{% static 'images/academics.jpg' %}" alt="Primary students learning">
+
+                    <span>01</span>
+
+                </div>
+
+                <div class="academic-level-content">
+
+                    <div class="academic-level-label">
+                        PRIMARY SCHOOL
+                    </div>
+
+                    <h3>Building Strong Foundations</h3>
+
+                    <p>
+                        Creating curiosity and developing strong
+                        foundations in language, mathematics, science
+                        and essential life skills.
+                    </p>
+
+                    <div class="academic-points">
+
+                        <span>
+                            <i class="bi bi-check2"></i>
+                            Foundational Learning
+                        </span>
+
+                        <span>
+                            <i class="bi bi-check2"></i>
+                            Creativity & Exploration
+                        </span>
+
+                        <span>
+                            <i class="bi bi-check2"></i>
+                            Social Development
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- SECONDARY -->
+            <article class="academic-level-card featured">
+
+                <div class="academic-level-image">
+
+                    <img src="{% static 'images/faculty.jpg' %}" alt="Secondary students learning">
+
+                    <span>02</span>
+
+                </div>
+
+                <div class="academic-level-content">
+
+                    <div class="academic-level-label">
+                        SECONDARY SCHOOL
+                    </div>
+
+                    <h3>Discover. Question. Grow.</h3>
+
+                    <p>
+                        Students develop deeper subject knowledge,
+                        critical thinking and the confidence to
+                        explore their interests.
+                    </p>
+
+                    <div class="academic-points">
+
+                        <span>
+                            <i class="bi bi-check2"></i>
+                            Concept-Based Learning
+                        </span>
+
+                        <span>
+                            <i class="bi bi-check2"></i>
+                            Critical Thinking
+                        </span>
+
+                        <span>
+                            <i class="bi bi-check2"></i>
+                            Independent Learning
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- SENIOR -->
+            <article class="academic-level-card">
+
+                <div class="academic-level-image">
+
+                    <img src="{% static 'images/campus.jpg' %}" alt="Senior students on campus">
+
+                    <span>03</span>
+
+                </div>
+
+                <div class="academic-level-content">
+
+                    <div class="academic-level-label">
+                        SENIOR SCHOOL
+                    </div>
+
+                    <h3>Preparing Future Leaders</h3>
+
+                    <p>
+                        Preparing students for higher education,
+                        career pathways and the responsibilities
+                        of tomorrow.
+                    </p>
+
+                    <div class="academic-points">
+
+                        <span>
+                            <i class="bi bi-check2"></i>
+                            Advanced Academics
+                        </span>
+
+                        <span>
+                            <i class="bi bi-check2"></i>
+                            Career Preparation
+                        </span>
+
+                        <span>
+                            <i class="bi bi-check2"></i>
+                            Leadership Skills
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     LEARNING EXPERIENCE
+     ========================================================= -->
+<section class="academic-experience">
+
+    <div class="container">
+
+        <div class="academic-experience-grid">
+
+            <div class="academic-experience-image">
+
+                <img src="{% static 'images/library.jpg' %}" alt="Students learning">
+
+                <div class="experience-badge">
+
+                    <i class="bi bi-lightbulb"></i>
+
+                    <div>
+                        <strong>Learn</strong>
+                        <span>Explore & Create</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="academic-experience-content">
+
+                <div class="section-tag">
+                    <span></span>
+                    THE LEARNING EXPERIENCE
+                </div>
+
+                <h2>
+                    From learning
+                    <em>to doing.</em>
+                </h2>
+
+                <p>
+                    We believe students learn best when they are
+                    actively involved. Our approach encourages them
+                    to connect classroom concepts with practical
+                    experiences.
+                </p>
+
+
+                <div class="experience-list">
+
+                    <div class="experience-item">
+
+                        <div class="experience-icon">
+                            <i class="bi bi-book"></i>
+                        </div>
+
+                        <div>
+                            <h3>Strong Fundamentals</h3>
+                            <p>
+                                Clear concepts and strong academic
+                                foundations.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="experience-item">
+
+                        <div class="experience-icon">
+                            <i class="bi bi-cpu"></i>
+                        </div>
+
+                        <div>
+                            <h3>Technology & Innovation</h3>
+                            <p>
+                                Preparing students for a technology-driven
+                                world.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="experience-item">
+
+                        <div class="experience-icon">
+                            <i class="bi bi-people"></i>
+                        </div>
+
+                        <div>
+                            <h3>Collaborative Learning</h3>
+                            <p>
+                                Building communication and teamwork
+                                through shared experiences.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="experience-item">
+
+                        <div class="experience-icon">
+                            <i class="bi bi-stars"></i>
+                        </div>
+
+                        <div>
+                            <h3>Creativity & Curiosity</h3>
+                            <p>
+                                Encouraging students to ask questions,
+                                experiment and innovate.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ACADEMIC HIGHLIGHTS
+     ========================================================= -->
+<section class="section academic-highlights">
+
+    <div class="container">
+
+        <div class="academic-highlights-header">
+
+            <div class="section-tag">
+                <span></span>
+                ACADEMIC HIGHLIGHTS
+            </div>
+
+            <h2>
+                Skills for the
+                <em>real world.</em>
+            </h2>
+
+            <p>
+                Academic success is important, but so are the skills
+                students carry with them beyond school.
+            </p>
+
+        </div>
+
+
+        <div class="academic-highlight-grid">
+
+            <div class="highlight-card">
+
+                <div class="highlight-number">01</div>
+
+                <i class="bi bi-chat-square-text"></i>
+
+                <h3>Communication</h3>
+
+                <p>
+                    Developing confident communication and
+                    presentation skills.
+                </p>
+
+            </div>
+
+
+            <div class="highlight-card">
+
+                <div class="highlight-number">02</div>
+
+                <i class="bi bi-puzzle"></i>
+
+                <h3>Critical Thinking</h3>
+
+                <p>
+                    Encouraging students to analyse problems and
+                    find meaningful solutions.
+                </p>
+
+            </div>
+
+
+            <div class="highlight-card">
+
+                <div class="highlight-number">03</div>
+
+                <i class="bi bi-rocket-takeoff"></i>
+
+                <h3>Innovation</h3>
+
+                <p>
+                    Turning ideas into projects, experiments and
+                    creative possibilities.
+                </p>
+
+            </div>
+
+
+            <div class="highlight-card">
+
+                <div class="highlight-number">04</div>
+
+                <i class="bi bi-person-check"></i>
+
+                <h3>Leadership</h3>
+
+                <p>
+                    Building responsibility, confidence and the
+                    ability to lead with purpose.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     DIGITAL RESOURCES
+     ========================================================= -->
+<section class="academic-resources">
+
+    <div class="container">
+
+        <div class="academic-resources-inner">
+
+            <div>
+
+                <div class="section-tag">
+                    <span></span>
+                    DIGITAL LEARNING
+                </div>
+
+                <h2>
+                    Learning doesn't
+                    <em>stop at school.</em>
+                </h2>
+
+                <p>
+                    Give students access to study material, notes,
+                    books and academic resources through our
+                    Digital Library.
+                </p>
+
+            </div>
+
+            <a href="{% url 'library:home' %}" class="btn-light">
+                Explore Digital Library
+                <i class="bi bi-arrow-up-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ADMISSIONS CTA
+     ========================================================= -->
+<section class="admission">
+
+    <div class="container">
+
+        <div class="admission-inner">
+
+            <div>
+
+                <div class="section-tag">
+                    <span></span>
+                    START YOUR JOURNEY
+                </div>
+
+                <h2>
+                    Give your child a
+                    <em>strong foundation.</em>
+                </h2>
+
+                <p>
+                    Discover an environment designed to help every
+                    student learn, grow and achieve.
+                </p>
+
+            </div>
+
+            <a href="{% url 'admissions:home' %}" class="btn-light">
+                Explore Admissions
+                <i class="bi bi-arrow-up-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

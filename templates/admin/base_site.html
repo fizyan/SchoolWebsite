@@ -1,0 +1,124 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}{{ title }} | School Administration{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+    :root {
+        --primary: #0f1f52;
+        --primary-dark: #071749;
+        --ice: #8dc2e0;
+        --page-bg: #f2f7fc;
+        --border: #dce8f3;
+    }
+
+    body,
+    #container {
+        background: var(--page-bg);
+    }
+
+    #header {
+        background: linear-gradient(120deg, var(--primary-dark), var(--primary));
+        color: #fff;
+        box-shadow: 0 4px 18px rgba(7, 23, 73, .18);
+    }
+
+    #branding h1,
+    #branding h1 a:link,
+    #branding h1 a:visited {
+        color: #fff;
+        font-weight: 700;
+        letter-spacing: .3px;
+    }
+
+    #user-tools,
+    #user-tools a {
+        color: #e5f5ff;
+    }
+
+    .module h2,
+    .module caption,
+    .inline-group h2 {
+        background: var(--primary);
+        color: #fff;
+    }
+
+    div.breadcrumbs {
+        background: #dceefa;
+        color: var(--primary);
+    }
+
+    div.breadcrumbs a {
+        color: var(--primary);
+        font-weight: 600;
+    }
+
+    .module,
+    .dashboard .module,
+    #content-related .module {
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(15, 31, 82, .05);
+    }
+
+    .button,
+    input[type=submit],
+    input[type=button],
+    .submit-row input,
+    a.button {
+        background: var(--primary);
+        border-radius: 6px;
+    }
+
+    .button:hover,
+    input[type=submit]:hover,
+    input[type=button]:hover,
+    .submit-row input:hover,
+    a.button:hover {
+        background: #21418c;
+    }
+
+    .object-tools a:link,
+    .object-tools a:visited {
+        background: var(--primary);
+        border-radius: 6px;
+    }
+
+    #nav-sidebar {
+        background: #fff;
+        border-right: 1px solid var(--border);
+    }
+
+    #nav-sidebar .current-model {
+        background: #e5f4ff;
+    }
+
+    a:link,
+    a:visited {
+        color: #244b91;
+    }
+
+    .dashboard #content {
+        width: auto;
+    }
+
+    @media (max-width: 767px) {
+        #content {
+            padding: 15px;
+        }
+
+        #branding h1 {
+            font-size: 18px;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block branding %}
+<div id="site-name">
+    <a href="{% url 'admin:index' %}">School Administration</a>
+</div>
+{% endblock %}

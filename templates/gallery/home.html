@@ -1,0 +1,224 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Gallery | School Name{% endblock %}
+
+{% block content %}
+
+<section class="gallery-hero">
+
+    <div class="gallery-hero-overlay"></div>
+
+    <div class="gallery-hero-content">
+
+        <span class="gallery-eyebrow">OUR GALLERY</span>
+
+        <h1>
+            Moments Worth<br>
+            <span>Remembering.</span>
+        </h1>
+
+        <p>
+            Explore the vibrant moments, achievements, celebrations
+            and experiences that make our school community special.
+        </p>
+
+        <div class="gallery-breadcrumb">
+            <a href="{% url 'school:home' %}">Home</a>
+            <i class="bi bi-chevron-right"></i>
+            <span>Gallery</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="gallery-section">
+
+    <div class="gallery-container">
+
+        <div class="gallery-heading">
+
+            <div>
+                <span class="section-label">SCHOOL LIFE</span>
+                <h2>Explore Our Memories</h2>
+            </div>
+
+            <p>
+                A glimpse into the activities, celebrations and
+                unforgettable moments from our school.
+            </p>
+
+        </div>
+
+
+        {% if categories %}
+
+        <div class="gallery-filters">
+
+            <a href="{% url 'gallery:home' %}" class="gallery-filter {% if not selected_category %}active{% endif %}">
+                All
+            </a>
+
+            {% for category in categories %}
+
+            <a href="?category={{ category.id }}"
+                class="gallery-filter {% if selected_category == category.id|stringformat:'s' %}active{% endif %}">
+                {{ category.name }}
+            </a>
+
+            {% endfor %}
+
+        </div>
+
+        {% endif %}
+
+
+        {% if images %}
+
+        <div class="gallery-grid">
+
+            {% for item in images %}
+
+            <article class="gallery-card">
+
+                <div class="gallery-image">
+
+                    <img src="{{ item.image.url }}" alt="{{ item.title }}" loading="lazy">
+
+                    <div class="gallery-overlay">
+
+                        <div class="gallery-overlay-content">
+
+                            <span>
+                                {% if item.category %}
+                                {{ item.category.name }}
+                                {% else %}
+                                School Life
+                                {% endif %}
+                            </span>
+
+                            <h3>{{ item.title }}</h3>
+
+                            {% if item.description %}
+                            <p>{{ item.description }}</p>
+                            {% endif %}
+
+                            <a href="{{ item.image.url }}" target="_blank" rel="noopener"
+                                aria-label="View {{ item.title }}">
+                                <i class="bi bi-arrows-fullscreen"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <div class="gallery-empty">
+
+            <div class="gallery-empty-icon">
+                <i class="bi bi-images"></i>
+            </div>
+
+            <h3>No Photos Available</h3>
+
+            <p>
+                There are currently no published photos in this gallery.
+                Please check again soon.
+            </p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+
+<section class="gallery-story">
+
+    <div class="gallery-story-container">
+
+        <div class="gallery-story-image">
+
+            <img src="{% static 'images/campus.jpg' %}" alt="School Campus">
+
+            <div class="gallery-story-badge">
+                <strong>Every</strong>
+                <span>Moment Matters</span>
+            </div>
+
+        </div>
+
+
+        <div class="gallery-story-content">
+
+            <span class="section-label">MORE THAN PHOTOS</span>
+
+            <h2>
+                Capturing the Spirit<br>
+                of Our School.
+            </h2>
+
+            <p>
+                Our gallery reflects more than just photographs.
+                It captures friendships, achievements, celebrations,
+                learning experiences and the everyday moments that
+                shape our students.
+            </p>
+
+            <p>
+                Every picture tells a story of curiosity, confidence,
+                creativity and community.
+            </p>
+
+            <a href="{% url 'school:about' %}" class="gallery-story-button">
+                Discover Our Story
+                <i class="bi bi-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="gallery-cta">
+
+    <div class="gallery-cta-container">
+
+        <div>
+
+            <span class="section-label">BE PART OF IT</span>
+
+            <h2>More Memories Are Waiting.</h2>
+
+            <p>
+                Discover our school, meet our faculty and explore
+                everything we offer to our students.
+            </p>
+
+        </div>
+
+        <a href="{% url 'admissions:home' %}" class="gallery-cta-button">
+            Join Our School
+            <i class="bi bi-arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

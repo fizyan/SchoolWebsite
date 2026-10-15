@@ -1,0 +1,1070 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Espresso & Cream — School Demo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --espresso: #241A17;
+            --espresso-2: #342621;
+            --mocha: #6F584D;
+            --cream: #FAF7F2;
+            --warm-cream: #F2E9DF;
+            --white: #FFFFFF;
+            --soft-brown: #A58F82;
+            --border: #E5DCD3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background: var(--cream);
+            color: var(--espresso);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1180px, 90%);
+            margin: auto;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            height: 82px;
+            background: rgba(250, 247, 242, .94);
+            border-bottom: 1px solid var(--border);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 5%;
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+            backdrop-filter: blur(14px);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+
+        .brand-logo {
+            width: 46px;
+            height: 46px;
+
+            background: var(--espresso);
+            color: var(--cream);
+
+            display: grid;
+            place-items: center;
+
+            font-family: "Playfair Display", serif;
+            font-size: 21px;
+
+            border-radius: 50%;
+        }
+
+        .brand-name {
+            font-family: "Playfair Display", serif;
+            font-size: 21px;
+            font-weight: 700;
+            letter-spacing: .5px;
+        }
+
+        .brand-small {
+            display: block;
+            color: var(--soft-brown);
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-top: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .nav-links a {
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+
+            width: 0;
+            height: 1px;
+
+            background: var(--mocha);
+
+            transition: .3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .admission-btn {
+            background: var(--espresso);
+            color: var(--cream);
+
+            padding: 13px 20px;
+
+            border-radius: 3px;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            transition: .3s;
+        }
+
+        .admission-btn:hover {
+            background: var(--mocha);
+            transform: translateY(-2px);
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 690px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            align-items: center;
+
+            gap: 70px;
+            padding: 90px 5%;
+
+            background:
+                radial-gradient(circle at 80% 20%,
+                    rgba(111, 88, 77, .12),
+                    transparent 35%);
+        }
+
+        .eyebrow {
+            color: var(--mocha);
+
+            font-size: 11px;
+            font-weight: 800;
+
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(48px, 5.2vw, 78px);
+
+            line-height: 1.03;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 28px;
+        }
+
+        .hero h1 span {
+            color: var(--mocha);
+            font-style: italic;
+        }
+
+        .hero-text {
+            max-width: 510px;
+
+            color: var(--soft-brown);
+
+            font-size: 16px;
+            line-height: 1.8;
+
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .primary-btn {
+            background: var(--espresso);
+            color: white;
+
+            padding: 15px 24px;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            border-radius: 3px;
+
+            transition: .3s;
+        }
+
+        .primary-btn:hover {
+            background: var(--mocha);
+            transform: translateY(-2px);
+        }
+
+        .secondary-btn {
+            border: 1px solid var(--espresso);
+
+            padding: 14px 23px;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            border-radius: 3px;
+
+            transition: .3s;
+        }
+
+        .secondary-btn:hover {
+            background: var(--espresso);
+            color: white;
+        }
+
+
+        /* ================= HERO VISUAL ================= */
+
+        .hero-visual {
+            position: relative;
+            height: 520px;
+        }
+
+        .main-card {
+            position: absolute;
+
+            width: 78%;
+            height: 90%;
+
+            right: 0;
+            top: 0;
+
+            background:
+                linear-gradient(135deg,
+                    var(--espresso-2),
+                    var(--mocha));
+
+            border-radius: 3px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 35px 70px rgba(36, 26, 23, .22);
+        }
+
+        .main-card::before {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(circle at 70% 30%,
+                    rgba(255, 255, 255, .12),
+                    transparent 30%);
+        }
+
+        .card-content {
+            position: absolute;
+
+            left: 35px;
+            bottom: 35px;
+
+            color: white;
+        }
+
+        .card-content small {
+            font-size: 10px;
+            letter-spacing: 2px;
+            opacity: .65;
+        }
+
+        .card-content h3 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 32px;
+
+            margin-top: 8px;
+        }
+
+        .floating-card {
+            position: absolute;
+
+            left: 0;
+            bottom: 55px;
+
+            width: 220px;
+
+            padding: 24px;
+
+            background: rgba(255, 255, 255, .94);
+
+            border: 1px solid var(--border);
+
+            box-shadow:
+                0 20px 50px rgba(36, 26, 23, .12);
+
+            backdrop-filter: blur(10px);
+        }
+
+        .floating-number {
+            font-family: "Playfair Display", serif;
+            font-size: 38px;
+        }
+
+        .floating-label {
+            color: var(--soft-brown);
+            font-size: 11px;
+            margin-top: 4px;
+        }
+
+
+        /* ================= STATS ================= */
+
+        .stats {
+            background: var(--espresso);
+            color: white;
+
+            padding: 42px 5%;
+        }
+
+        .stats-grid {
+            max-width: 1180px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 30px;
+        }
+
+        .stat {
+            padding: 10px 25px;
+            border-left: 1px solid rgba(255, 255, 255, .15);
+        }
+
+        .stat:first-child {
+            border-left: 0;
+        }
+
+        .stat-number {
+            font-family: "Playfair Display", serif;
+            font-size: 34px;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, .55);
+            font-size: 11px;
+            margin-top: 5px;
+            letter-spacing: 1px;
+        }
+
+
+        /* ================= SECTION ================= */
+
+        .section {
+            padding: 110px 0;
+        }
+
+        .section-heading {
+            max-width: 650px;
+            margin-bottom: 55px;
+        }
+
+        .section-heading h2 {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(38px, 4vw, 58px);
+
+            line-height: 1.1;
+
+            margin-bottom: 18px;
+        }
+
+        .section-heading p {
+            color: var(--soft-brown);
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+
+        /* ================= CARDS ================= */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .feature-card {
+            background: white;
+
+            border: 1px solid var(--border);
+
+            padding: 38px;
+
+            min-height: 250px;
+
+            transition: .35s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 25px 55px rgba(36, 26, 23, .10);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+
+            background: var(--warm-cream);
+            color: var(--mocha);
+
+            display: grid;
+            place-items: center;
+
+            margin-bottom: 25px;
+
+            font-size: 19px;
+        }
+
+        .feature-card h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--soft-brown);
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+
+        /* ================= LIBRARY ================= */
+
+        .library {
+            background: var(--warm-cream);
+        }
+
+        .library-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            background: var(--espresso);
+
+            color: white;
+
+            padding: 60px;
+
+            gap: 60px;
+        }
+
+        .library-box h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 48px;
+            line-height: 1.1;
+        }
+
+        .library-box p {
+            color: rgba(255, 255, 255, .58);
+            line-height: 1.8;
+            margin-top: 18px;
+        }
+
+        .library-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .book {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 20px;
+
+            border: 1px solid rgba(255, 255, 255, .12);
+        }
+
+        .book span {
+            font-size: 13px;
+        }
+
+        .book small {
+            color: rgba(255, 255, 255, .45);
+        }
+
+
+        /* ================= CTA ================= */
+
+        .cta {
+            padding: 110px 5%;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(42px, 5vw, 65px);
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            color: var(--soft-brown);
+            max-width: 570px;
+            margin: auto;
+            line-height: 1.8;
+        }
+
+        .cta .primary-btn {
+            display: inline-block;
+            margin-top: 30px;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #1B1311;
+            color: white;
+
+            padding: 70px 5% 25px;
+        }
+
+        .footer-grid {
+            max-width: 1180px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+
+            gap: 60px;
+
+            padding-bottom: 55px;
+        }
+
+        footer h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 25px;
+        }
+
+        footer h4 {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, .55);
+        }
+
+        footer a,
+        footer p {
+            display: block;
+
+            color: rgba(255, 255, 255, .55);
+
+            font-size: 12px;
+
+            line-height: 2.2;
+        }
+
+        .copyright {
+            max-width: 1180px;
+            margin: auto;
+
+            border-top: 1px solid rgba(255, 255, 255, .1);
+
+            padding-top: 22px;
+
+            color: rgba(255, 255, 255, .35);
+
+            font-size: 11px;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width: 850px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 65px;
+            }
+
+            .hero-visual {
+                height: 430px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .library-box {
+                grid-template-columns: 1fr;
+                padding: 35px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media(max-width: 520px) {
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero-visual {
+                height: 360px;
+            }
+
+            .main-card {
+                width: 80%;
+            }
+
+            .floating-card {
+                width: 180px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stat {
+                padding: 10px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <a href="#" class="brand">
+
+            <div class="brand-logo">
+                S
+            </div>
+
+            <div>
+                <div class="brand-name">
+                    School Name
+                </div>
+
+                <span class="brand-small">
+                    EXCELLENCE IN EDUCATION
+                </span>
+            </div>
+
+        </a>
+
+        <div class="nav-links">
+
+            <a href="#">About</a>
+            <a href="#">Academics</a>
+            <a href="#">Faculty</a>
+            <a href="#">Library</a>
+            <a href="#">Events</a>
+
+            <a href="#" class="admission-btn">
+                Admissions
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="container">
+
+            <div class="eyebrow">
+                A Tradition of Excellence
+            </div>
+
+            <h1>
+                Shaping minds.<br>
+                <span>Building futures.</span>
+            </h1>
+
+            <p class="hero-text">
+                A place where curiosity becomes knowledge,
+                knowledge becomes confidence, and young minds
+                are prepared to make a meaningful difference.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#" class="primary-btn">
+                    Discover Our School →
+                </a>
+
+                <a href="#" class="secondary-btn">
+                    Explore Campus
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+            <div class="main-card">
+
+                <div class="card-content">
+
+                    <small>
+                        ESTABLISHED 1985
+                    </small>
+
+                    <h3>
+                        Where Excellence<br>
+                        Begins.
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="floating-card">
+
+                <div class="floating-number">
+                    40+
+                </div>
+
+                <div class="floating-label">
+                    YEARS OF EDUCATIONAL EXCELLENCE
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+        <div class="stats-grid">
+
+            <div class="stat">
+                <div class="stat-number">40+</div>
+                <div class="stat-label">Years of Excellence</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-number">2,500+</div>
+                <div class="stat-label">Students</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-number">120+</div>
+                <div class="stat-label">Faculty Members</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Academic Success</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div class="eyebrow">
+                    Why Choose Us
+                </div>
+
+                <h2>
+                    More than education.<br>
+                    A foundation for life.
+                </h2>
+
+                <p>
+                    We combine strong academics, character development
+                    and modern learning experiences to help every student
+                    discover their potential.
+                </p>
+
+            </div>
+
+
+            <div class="cards">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">01</div>
+
+                    <h3>
+                        Academic Excellence
+                    </h3>
+
+                    <p>
+                        A thoughtfully designed curriculum that encourages
+                        curiosity, critical thinking and lifelong learning.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">02</div>
+
+                    <h3>
+                        Digital Learning
+                    </h3>
+
+                    <p>
+                        Modern technology and digital resources that make
+                        learning engaging, accessible and future-ready.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">03</div>
+
+                    <h3>
+                        Holistic Growth
+                    </h3>
+
+                    <p>
+                        Sports, arts, leadership and activities that help
+                        students grow beyond the classroom.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LIBRARY -->
+
+    <section class="section library">
+
+        <div class="container">
+
+            <div class="library-box">
+
+                <div>
+
+                    <div class="eyebrow" style="color:#A58F82;">
+                        Digital Library
+                    </div>
+
+                    <h2>
+                        Knowledge,<br>
+                        always within reach.
+                    </h2>
+
+                    <p>
+                        Explore books, study materials, previous papers
+                        and educational resources from anywhere.
+                    </p>
+
+                    <a href="#" class="primary-btn" style="display:inline-block;margin-top:25px;">
+                        Visit Library →
+                    </a>
+
+                </div>
+
+
+                <div class="library-list">
+
+                    <div class="book">
+                        <span>Mathematics — Class 10</span>
+                        <small>PDF</small>
+                    </div>
+
+                    <div class="book">
+                        <span>Physics — Class 12</span>
+                        <small>PDF</small>
+                    </div>
+
+                    <div class="book">
+                        <span>Previous Examination Papers</span>
+                        <small>PDF</small>
+                    </div>
+
+                    <div class="book">
+                        <span>Science Study Material</span>
+                        <small>PDF</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <div class="eyebrow">
+            Begin Your Journey
+        </div>
+
+        <h2>
+            Your future starts here.
+        </h2>
+
+        <p>
+            Discover a learning environment where every student
+            is encouraged to dream bigger, learn deeper and become
+            the best version of themselves.
+        </p>
+
+        <a href="#" class="primary-btn">
+            Explore Admissions →
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+            <div>
+
+                <h3>School Name</h3>
+
+                <p style="margin-top:15px;max-width:330px;">
+                    Inspiring young minds through knowledge,
+                    character and confidence.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h4>Explore</h4>
+
+                <a href="#">About</a>
+                <a href="#">Academics</a>
+                <a href="#">Faculty</a>
+                <a href="#">Library</a>
+
+            </div>
+
+            <div>
+
+                <h4>Resources</h4>
+
+                <a href="#">Notices</a>
+                <a href="#">Events</a>
+                <a href="#">Gallery</a>
+                <a href="#">Admissions</a>
+
+            </div>
+
+            <div>
+
+                <h4>Contact</h4>
+
+                <p>School Address</p>
+                <p>Gujarat, India</p>
+                <p>+91 98765 43210</p>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 School Name. All Rights Reserved.
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

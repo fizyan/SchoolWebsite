@@ -1,0 +1,572 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Faculty | School Name{% endblock %}
+
+{% block content %}
+
+<!-- =========================
+     FACULTY HERO
+     ========================= -->
+
+<section class="faculty-hero">
+
+    <div class="faculty-hero-bg"></div>
+    <div class="faculty-hero-overlay"></div>
+
+    <div class="faculty-hero-container">
+
+        <div class="faculty-hero-content">
+
+            <span>Our People</span>
+
+            <h1>
+                Meet Our
+                <strong>Faculty</strong>
+            </h1>
+
+            <p>
+                Experienced educators, dedicated mentors and
+                passionate professionals working together to
+                shape confident and successful students.
+            </p>
+
+            <div class="faculty-breadcrumb">
+                <a href="{% url 'school:home' %}">Home</a>
+                <i class="bi bi-chevron-right"></i>
+                <span>Faculty</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FACULTY INTRO
+     ========================= -->
+
+<section class="faculty-intro">
+
+    <div class="container">
+
+        <div class="faculty-intro-grid">
+
+            <div class="faculty-intro-heading">
+
+                <span>Our Educators</span>
+
+                <h2>
+                    Inspiring Minds,
+                    <strong>Building Futures</strong>
+                </h2>
+
+            </div>
+
+            <div class="faculty-intro-text">
+
+                <p>
+                    Our faculty members bring knowledge, experience
+                    and genuine care into every classroom. They focus
+                    not only on academic excellence, but also on
+                    developing character, confidence and curiosity.
+                </p>
+
+                <p>
+                    Every teacher plays an important role in creating
+                    an environment where students feel supported,
+                    challenged and inspired to achieve their goals.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FACULTY STATS
+     ========================= -->
+
+<section class="faculty-stats">
+
+    <div class="container">
+
+        <div class="faculty-stats-grid">
+
+            <div class="faculty-stat">
+
+                <div class="faculty-stat-icon">
+                    <i class="bi bi-people-fill"></i>
+                </div>
+
+                <strong>25+</strong>
+                <span>Faculty Members</span>
+
+            </div>
+
+
+            <div class="faculty-stat">
+
+                <div class="faculty-stat-icon">
+                    <i class="bi bi-mortarboard-fill"></i>
+                </div>
+
+                <strong>15+</strong>
+                <span>Years Experience</span>
+
+            </div>
+
+
+            <div class="faculty-stat">
+
+                <div class="faculty-stat-icon">
+                    <i class="bi bi-award-fill"></i>
+                </div>
+
+                <strong>100%</strong>
+                <span>Dedicated Educators</span>
+
+            </div>
+
+
+            <div class="faculty-stat">
+
+                <div class="faculty-stat-icon">
+                    <i class="bi bi-heart-fill"></i>
+                </div>
+
+                <strong>1</strong>
+                <span>Shared Mission</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FACULTY MEMBERS
+     ========================= -->
+
+<section class="faculty-members">
+
+    <div class="container">
+
+        <div class="section-title faculty-section-title">
+
+            <span>Our Team</span>
+
+            <h2>Meet Our Faculty</h2>
+
+            <p>
+                Dedicated professionals committed to helping
+                every student reach their full potential.
+            </p>
+
+        </div>
+
+
+        <div class="faculty-grid">
+
+            <!-- FACULTY CARD 01 -->
+
+            <div class="faculty-card">
+
+                <div class="faculty-card-image">
+
+                    <img src="{% static 'images/faculty.jpg' %}" alt="Faculty Member">
+
+                    <div class="faculty-card-number">
+                        01
+                    </div>
+
+                </div>
+
+                <div class="faculty-card-content">
+
+                    <span>Senior Faculty</span>
+
+                    <h3>Teacher Name</h3>
+
+                    <p>Academic Department</p>
+
+                    <div class="faculty-card-line"></div>
+
+                    <div class="faculty-card-footer">
+
+                        <span>
+                            <i class="bi bi-mortarboard"></i>
+                            Experienced Educator
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FACULTY CARD 02 -->
+
+            <div class="faculty-card">
+
+                <div class="faculty-card-image">
+
+                    <img src="{% static 'images/faculty.jpg' %}" alt="Faculty Member">
+
+                    <div class="faculty-card-number">
+                        02
+                    </div>
+
+                </div>
+
+                <div class="faculty-card-content">
+
+                    <span>Senior Faculty</span>
+
+                    <h3>Teacher Name</h3>
+
+                    <p>Academic Department</p>
+
+                    <div class="faculty-card-line"></div>
+
+                    <div class="faculty-card-footer">
+
+                        <span>
+                            <i class="bi bi-mortarboard"></i>
+                            Experienced Educator
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FACULTY CARD 03 -->
+
+            <div class="faculty-card">
+
+                <div class="faculty-card-image">
+
+                    <img src="{% static 'images/faculty.jpg' %}" alt="Faculty Member">
+
+                    <div class="faculty-card-number">
+                        03
+                    </div>
+
+                </div>
+
+                <div class="faculty-card-content">
+
+                    <span>Faculty Member</span>
+
+                    <h3>Teacher Name</h3>
+
+                    <p>Academic Department</p>
+
+                    <div class="faculty-card-line"></div>
+
+                    <div class="faculty-card-footer">
+
+                        <span>
+                            <i class="bi bi-mortarboard"></i>
+                            Dedicated Educator
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FACULTY CARD 04 -->
+
+            <div class="faculty-card">
+
+                <div class="faculty-card-image">
+
+                    <img src="{% static 'images/faculty.jpg' %}" alt="Faculty Member">
+
+                    <div class="faculty-card-number">
+                        04
+                    </div>
+
+                </div>
+
+                <div class="faculty-card-content">
+
+                    <span>Faculty Member</span>
+
+                    <h3>Teacher Name</h3>
+
+                    <p>Academic Department</p>
+
+                    <div class="faculty-card-line"></div>
+
+                    <div class="faculty-card-footer">
+
+                        <span>
+                            <i class="bi bi-mortarboard"></i>
+                            Dedicated Educator
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FACULTY CARD 05 -->
+
+            <div class="faculty-card">
+
+                <div class="faculty-card-image">
+
+                    <img src="{% static 'images/faculty.jpg' %}" alt="Faculty Member">
+
+                    <div class="faculty-card-number">
+                        05
+                    </div>
+
+                </div>
+
+                <div class="faculty-card-content">
+
+                    <span>Faculty Member</span>
+
+                    <h3>Teacher Name</h3>
+
+                    <p>Academic Department</p>
+
+                    <div class="faculty-card-line"></div>
+
+                    <div class="faculty-card-footer">
+
+                        <span>
+                            <i class="bi bi-mortarboard"></i>
+                            Dedicated Educator
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FACULTY CARD 06 -->
+
+            <div class="faculty-card">
+
+                <div class="faculty-card-image">
+
+                    <img src="{% static 'images/faculty.jpg' %}" alt="Faculty Member">
+
+                    <div class="faculty-card-number">
+                        06
+                    </div>
+
+                </div>
+
+                <div class="faculty-card-content">
+
+                    <span>Faculty Member</span>
+
+                    <h3>Teacher Name</h3>
+
+                    <p>Academic Department</p>
+
+                    <div class="faculty-card-line"></div>
+
+                    <div class="faculty-card-footer">
+
+                        <span>
+                            <i class="bi bi-mortarboard"></i>
+                            Dedicated Educator
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FACULTY PHILOSOPHY
+     ========================= -->
+
+<section class="faculty-philosophy">
+
+    <div class="container">
+
+        <div class="faculty-philosophy-grid">
+
+            <div class="faculty-philosophy-content">
+
+                <span>Our Philosophy</span>
+
+                <h2>
+                    Teaching Beyond
+                    <strong>the Classroom</strong>
+                </h2>
+
+                <p>
+                    We believe that great teachers do more than
+                    deliver lessons. They encourage questions,
+                    recognise potential and guide students through
+                    every stage of their learning journey.
+                </p>
+
+
+                <div class="faculty-philosophy-points">
+
+                    <div class="faculty-philosophy-point">
+
+                        <div class="faculty-point-icon">
+                            <i class="bi bi-lightbulb-fill"></i>
+                        </div>
+
+                        <div>
+                            <h4>Encourage Curiosity</h4>
+
+                            <p>
+                                Creating classrooms where students
+                                feel confident to ask, explore and learn.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="faculty-philosophy-point">
+
+                        <div class="faculty-point-icon">
+                            <i class="bi bi-person-hearts"></i>
+                        </div>
+
+                        <div>
+                            <h4>Student-Centred Approach</h4>
+
+                            <p>
+                                Understanding individual strengths,
+                                needs and learning styles.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="faculty-philosophy-point">
+
+                        <div class="faculty-point-icon">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+
+                        <div>
+                            <h4>Continuous Growth</h4>
+
+                            <p>
+                                Helping students develop academically,
+                                personally and socially.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="faculty-philosophy-image">
+
+                <img src="{% static 'images/academics.jpg' %}" alt="Students learning">
+
+                <div class="faculty-philosophy-badge">
+
+                    <strong>Learn.</strong>
+                    <span>Grow.</span>
+                    <b>Lead.</b>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FACULTY CTA
+     ========================= -->
+
+<section class="faculty-cta">
+
+    <div class="container">
+
+        <div class="faculty-cta-inner">
+
+            <div>
+
+                <span>Discover More</span>
+
+                <h2>
+                    Explore Our Academic
+                    <strong>Environment</strong>
+                </h2>
+
+                <p>
+                    Discover how our curriculum, faculty and
+                    learning environment work together to create
+                    meaningful educational experiences.
+                </p>
+
+            </div>
+
+
+            <div class="faculty-cta-actions">
+
+                <a href="{% url 'school:academics' %}" class="btn btn-primary">
+                    Explore Academics
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+
+
+                <a href="{% url 'school:contact' %}" class="btn btn-outline">
+                    Contact Us
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock %}

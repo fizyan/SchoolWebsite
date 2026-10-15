@@ -1,0 +1,1881 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Charcoal & Electric Blue — School Demo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+
+            --charcoal: #171A1F;
+            --charcoal-2: #22272E;
+            --charcoal-3: #2B3139;
+
+            --electric: #1683FF;
+            --electric-light: #63B3FF;
+
+            --ice: #EDF6FF;
+
+            --white: #FFFFFF;
+
+            --text: #1B2026;
+            --muted: #737B86;
+
+            --border: #E2E7ED;
+
+            --dark-muted: #A7AFB9;
+        }
+
+
+        /* =========================================================
+   RESET
+========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            font-family: "DM Sans", sans-serif;
+
+            background: #F8FAFC;
+
+            color: var(--text);
+
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+
+            width: min(1180px, 90%);
+
+            margin: auto;
+        }
+
+
+        /* =========================================================
+   NAVBAR
+========================================================= */
+
+        .navbar {
+
+            height: 82px;
+
+            background: rgba(255, 255, 255, .94);
+
+            border-bottom: 1px solid var(--border);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 5%;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 100;
+
+            backdrop-filter: blur(18px);
+        }
+
+
+        .brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+        }
+
+
+        .logo {
+
+            width: 47px;
+
+            height: 47px;
+
+            background: var(--charcoal);
+
+            color: var(--electric-light);
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 9px;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 22px;
+
+            box-shadow:
+
+                0 10px 25px rgba(23, 26, 31, .18);
+        }
+
+
+        .brand-name {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 21px;
+
+            font-weight: 700;
+
+            color: var(--charcoal);
+        }
+
+
+        .brand-small {
+
+            display: block;
+
+            color: #8A929C;
+
+            font-size: 8px;
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            margin-top: 3px;
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 27px;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            color: #343A42;
+        }
+
+
+        .nav-links a {
+
+            position: relative;
+        }
+
+
+        .nav-links a:not(.admission)::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -7px;
+
+            width: 0;
+
+            height: 2px;
+
+            background: var(--electric);
+
+            transition: .3s;
+        }
+
+
+        .nav-links a:not(.admission):hover::after {
+
+            width: 100%;
+        }
+
+
+        .admission {
+
+            background: var(--electric);
+
+            color: white;
+
+            padding: 13px 21px;
+
+            border-radius: 5px;
+
+            transition: .3s;
+
+            box-shadow:
+
+                0 8px 20px rgba(22, 131, 255, .20);
+        }
+
+
+        .admission:hover {
+
+            background: #0874EA;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================================
+   HERO
+========================================================= */
+
+        .hero {
+
+            min-height: 700px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            align-items: center;
+
+            gap: 70px;
+
+            padding: 90px 5%;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+
+                radial-gradient(circle at 85% 20%,
+
+                    rgba(22, 131, 255, .10),
+
+                    transparent 30%);
+        }
+
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+
+            height: 500px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(22, 131, 255, .07);
+
+            right: -230px;
+
+            top: -200px;
+        }
+
+
+        .eyebrow {
+
+            color: var(--electric);
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero h1 {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(48px, 5.3vw, 78px);
+
+            line-height: 1.03;
+
+            letter-spacing: -2.5px;
+
+            color: var(--charcoal);
+
+            margin-bottom: 28px;
+        }
+
+
+        .hero h1 span {
+
+            color: var(--electric);
+
+            font-style: italic;
+        }
+
+
+        .hero-text {
+
+            max-width: 515px;
+
+            color: var(--muted);
+
+            font-size: 16px;
+
+            line-height: 1.8;
+
+            margin-bottom: 34px;
+        }
+
+
+        .buttons {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+        }
+
+
+        .primary {
+
+            background: var(--electric);
+
+            color: white;
+
+            padding: 15px 24px;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            border-radius: 5px;
+
+            transition: .3s;
+
+            box-shadow:
+
+                0 10px 25px rgba(22, 131, 255, .18);
+        }
+
+
+        .primary:hover {
+
+            background: #0874EA;
+
+            transform: translateY(-2px);
+        }
+
+
+        .secondary {
+
+            border: 1px solid #242A31;
+
+            padding: 14px 23px;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            border-radius: 5px;
+
+            transition: .3s;
+        }
+
+
+        .secondary:hover {
+
+            background: var(--charcoal);
+
+            color: white;
+        }
+
+
+        /* =========================================================
+   HERO VISUAL
+========================================================= */
+
+        .hero-visual {
+
+            height: 520px;
+
+            position: relative;
+        }
+
+
+        .visual-main {
+
+            position: absolute;
+
+            width: 78%;
+
+            height: 90%;
+
+            right: 0;
+
+            top: 0;
+
+            background:
+
+                linear-gradient(145deg,
+
+                    #121519,
+
+                    #282E36);
+
+            border-radius: 14px;
+
+            overflow: hidden;
+
+            box-shadow:
+
+                0 35px 75px rgba(23, 26, 31, .25);
+        }
+
+
+        .visual-main::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 430px;
+
+            height: 430px;
+
+            border-radius: 50%;
+
+            background:
+
+                radial-gradient(circle,
+
+                    rgba(22, 131, 255, .26),
+
+                    transparent 67%);
+
+            right: -150px;
+
+            top: -150px;
+        }
+
+
+        .visual-main::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+
+            height: 250px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(99, 179, 255, .18);
+
+            right: 60px;
+
+            top: 70px;
+        }
+
+
+        .visual-line {
+
+            position: absolute;
+
+            width: 160px;
+
+            height: 1px;
+
+            background: var(--electric);
+
+            left: 40px;
+
+            top: 70px;
+        }
+
+
+        .visual-content {
+
+            position: absolute;
+
+            left: 40px;
+
+            bottom: 40px;
+
+            color: white;
+
+            z-index: 2;
+        }
+
+
+        .visual-content small {
+
+            color: var(--electric-light);
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+        }
+
+
+        .visual-content h3 {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 36px;
+
+            line-height: 1.12;
+
+            margin-top: 10px;
+        }
+
+
+        .visual-content p {
+
+            color: rgba(255, 255, 255, .45);
+
+            font-size: 11px;
+
+            margin-top: 14px;
+        }
+
+
+        .floating {
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: 48px;
+
+            width: 220px;
+
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 10px;
+
+            border: 1px solid var(--border);
+
+            box-shadow:
+
+                0 20px 50px rgba(23, 26, 31, .14);
+
+            z-index: 5;
+        }
+
+
+        .floating-number {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 41px;
+
+            color: var(--electric);
+        }
+
+
+        .floating-text {
+
+            font-size: 10px;
+
+            color: var(--muted);
+
+            letter-spacing: 1px;
+
+            margin-top: 4px;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================================================
+   STATS
+========================================================= */
+
+        .stats {
+
+            background: var(--charcoal);
+
+            padding: 44px 5%;
+
+            border-top: 1px solid #30363D;
+        }
+
+
+        .stats-grid {
+
+            max-width: 1180px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+
+        .stat {
+
+            padding: 8px 28px;
+
+            border-left: 1px solid rgba(255, 255, 255, .12);
+        }
+
+
+        .stat:first-child {
+
+            border-left: 0;
+        }
+
+
+        .stat-number {
+
+            color: white;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 37px;
+        }
+
+
+        .stat-number span {
+
+            color: var(--electric-light);
+        }
+
+
+        .stat-label {
+
+            color: rgba(255, 255, 255, .43);
+
+            font-size: 10px;
+
+            letter-spacing: 1px;
+
+            margin-top: 5px;
+        }
+
+
+        /* =========================================================
+   SECTION
+========================================================= */
+
+        .section {
+
+            padding: 110px 0;
+        }
+
+
+        .heading {
+
+            max-width: 680px;
+
+            margin-bottom: 55px;
+        }
+
+
+        .heading h2 {
+
+            font-family: "Playfair Display", serif;
+
+            color: var(--charcoal);
+
+            font-size: clamp(38px, 4vw, 58px);
+
+            line-height: 1.08;
+
+            margin-bottom: 18px;
+        }
+
+
+        .heading p {
+
+            color: var(--muted);
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================================
+   CARDS
+========================================================= */
+
+        .cards {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+
+        .card {
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 10px;
+
+            padding: 38px;
+
+            min-height: 275px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition: .35s;
+        }
+
+
+        .card::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: 0;
+
+            width: 0;
+
+            height: 3px;
+
+            background: var(--electric);
+
+            transition: .35s;
+        }
+
+
+        .card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow:
+
+                0 25px 55px rgba(23, 26, 31, .10);
+        }
+
+
+        .card:hover::after {
+
+            width: 100%;
+        }
+
+
+        .icon {
+
+            width: 51px;
+
+            height: 51px;
+
+            background: var(--ice);
+
+            color: var(--electric);
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 9px;
+
+            margin-bottom: 25px;
+
+            font-weight: 800;
+
+            font-size: 12px;
+        }
+
+
+        .card h3 {
+
+            font-family: "Playfair Display", serif;
+
+            color: var(--charcoal);
+
+            font-size: 25px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .card p {
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.75;
+        }
+
+
+        /* =========================================================
+   LIBRARY
+========================================================= */
+
+        .library {
+
+            background: #EEF6FF;
+        }
+
+
+        .library-box {
+
+            background:
+
+                linear-gradient(135deg,
+
+                    #15191E,
+
+                    #252B33);
+
+            color: white;
+
+            border-radius: 13px;
+
+            padding: 68px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            box-shadow:
+
+                0 30px 70px rgba(23, 26, 31, .18);
+        }
+
+
+        .library-box::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 450px;
+
+            height: 450px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(22, 131, 255, .13);
+
+            right: -190px;
+
+            top: -180px;
+        }
+
+
+        .library-box h2 {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 49px;
+
+            line-height: 1.1;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .library-box p {
+
+            color: rgba(255, 255, 255, .48);
+
+            line-height: 1.8;
+
+            margin-top: 18px;
+
+            max-width: 450px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .books {
+
+            display: grid;
+
+            gap: 12px;
+
+            position: relative;
+
+            z-index: 3;
+        }
+
+
+        .book {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 18px 20px;
+
+            border: 1px solid rgba(255, 255, 255, .11);
+
+            border-radius: 6px;
+
+            transition: .25s;
+
+            background: rgba(255, 255, 255, .025);
+        }
+
+
+        .book:hover {
+
+            background: rgba(22, 131, 255, .08);
+
+            border-color: rgba(99, 179, 255, .45);
+
+            transform: translateX(5px);
+        }
+
+
+        .book span {
+
+            font-size: 13px;
+        }
+
+
+        .book small {
+
+            color: var(--electric-light);
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================================================
+   CTA
+========================================================= */
+
+        .cta {
+
+            text-align: center;
+
+            padding: 115px 5%;
+
+            background: white;
+        }
+
+
+        .cta h2 {
+
+            font-family: "Playfair Display", serif;
+
+            color: var(--charcoal);
+
+            font-size: clamp(42px, 5vw, 66px);
+
+            margin-bottom: 20px;
+        }
+
+
+        .cta p {
+
+            max-width: 590px;
+
+            margin: auto;
+
+            color: var(--muted);
+
+            line-height: 1.8;
+        }
+
+
+        .cta .primary {
+
+            display: inline-block;
+
+            margin-top: 30px;
+        }
+
+
+        /* =========================================================
+   FOOTER
+========================================================= */
+
+        footer {
+
+            background: #101317;
+
+            color: white;
+
+            padding: 72px 5% 25px;
+        }
+
+
+        .footer-grid {
+
+            max-width: 1180px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+
+            gap: 60px;
+
+            padding-bottom: 55px;
+        }
+
+
+        footer h3 {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 25px;
+        }
+
+
+        footer h4 {
+
+            color: var(--electric-light);
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 18px;
+        }
+
+
+        footer a,
+        footer p {
+
+            display: block;
+
+            color: rgba(255, 255, 255, .45);
+
+            font-size: 12px;
+
+            line-height: 2.2;
+
+            transition: .2s;
+        }
+
+
+        footer a:hover {
+
+            color: white;
+
+            padding-left: 4px;
+        }
+
+
+        .footer-description {
+
+            max-width: 330px;
+
+            margin-top: 15px;
+        }
+
+
+        .copyright {
+
+            max-width: 1180px;
+
+            margin: auto;
+
+            border-top: 1px solid rgba(255, 255, 255, .09);
+
+            padding-top: 22px;
+
+            color: rgba(255, 255, 255, .27);
+
+            font-size: 11px;
+        }
+
+
+        /* =========================================================
+   MOBILE
+========================================================= */
+
+        @media(max-width: 850px) {
+
+            .nav-links {
+
+                display: none;
+            }
+
+
+            .hero {
+
+                grid-template-columns: 1fr;
+
+                padding-top: 65px;
+            }
+
+
+            .hero-visual {
+
+                height: 430px;
+            }
+
+
+            .stats-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+
+                gap: 25px;
+            }
+
+
+            .stat {
+
+                border-left: 0;
+            }
+
+
+            .cards {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .library-box {
+
+                grid-template-columns: 1fr;
+
+                padding: 45px;
+            }
+
+
+            .footer-grid {
+
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        @media(max-width: 520px) {
+
+            .hero h1 {
+
+                font-size: 46px;
+            }
+
+
+            .hero-visual {
+
+                height: 380px;
+            }
+
+
+            .visual-main {
+
+                width: 82%;
+            }
+
+
+            .floating {
+
+                width: 190px;
+
+                padding: 20px;
+            }
+
+
+            .library-box h2 {
+
+                font-size: 38px;
+            }
+
+
+            .library-box {
+
+                padding: 32px;
+            }
+
+
+            .footer-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .buttons {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+    <nav class="navbar">
+
+        <a class="brand" href="#">
+
+            <div class="logo">
+                S
+            </div>
+
+            <div>
+
+                <div class="brand-name">
+                    School Name
+                </div>
+
+                <span class="brand-small">
+                    EXCELLENCE IN EDUCATION
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#academics">
+                Academics
+            </a>
+
+            <a href="#faculty">
+                Faculty
+            </a>
+
+            <a href="#library">
+                Library
+            </a>
+
+            <a href="#events">
+                Events
+            </a>
+
+            <a href="#admissions" class="admission">
+                Admissions
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================================================
+     HERO
+========================================================= -->
+
+    <section class="hero">
+
+
+        <div class="container">
+
+            <div class="eyebrow">
+                A Tradition of Excellence
+            </div>
+
+
+            <h1>
+
+                Think bigger.<br>
+
+                <span>Dream further.</span>
+
+            </h1>
+
+
+            <p class="hero-text">
+
+                A modern learning environment where curiosity,
+                creativity and knowledge come together to prepare
+                students for a world full of possibilities.
+
+            </p>
+
+
+            <div class="buttons">
+
+                <a href="#about" class="primary">
+                    Discover Our School →
+                </a>
+
+
+                <a href="#library" class="secondary">
+                    Explore Library
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="hero-visual">
+
+
+            <div class="visual-main">
+
+                <div class="visual-line"></div>
+
+
+                <div class="visual-content">
+
+                    <small>
+                        ESTABLISHED 1985
+                    </small>
+
+
+                    <h3>
+
+                        Learning today.<br>
+
+                        Leading tomorrow.
+
+                    </h3>
+
+
+                    <p>
+                        Knowledge • Character • Innovation
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="floating">
+
+                <div class="floating-number">
+                    40+
+                </div>
+
+                <div class="floating-text">
+                    YEARS OF EDUCATIONAL EXCELLENCE
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+     STATS
+========================================================= -->
+
+    <section class="stats">
+
+        <div class="stats-grid">
+
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    40<span>+</span>
+                </div>
+
+                <div class="stat-label">
+                    YEARS OF EXCELLENCE
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    2,500<span>+</span>
+                </div>
+
+                <div class="stat-label">
+                    STUDENTS
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    120<span>+</span>
+                </div>
+
+                <div class="stat-label">
+                    FACULTY MEMBERS
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    98<span>%</span>
+                </div>
+
+                <div class="stat-label">
+                    ACADEMIC SUCCESS
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+     WHY SCHOOL
+========================================================= -->
+
+    <section class="section" id="about">
+
+        <div class="container">
+
+
+            <div class="heading">
+
+                <div class="eyebrow">
+                    Why Choose Us
+                </div>
+
+
+                <h2>
+
+                    Education that prepares
+                    you for what's next.
+
+                </h2>
+
+
+                <p>
+
+                    We believe education should go beyond textbooks.
+                    Our students learn to think independently,
+                    communicate confidently and solve real-world
+                    problems.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="cards">
+
+
+                <div class="card">
+
+                    <div class="icon">
+                        01
+                    </div>
+
+
+                    <h3>
+                        Academic Excellence
+                    </h3>
+
+
+                    <p>
+
+                        A strong academic foundation built around
+                        curiosity, critical thinking and meaningful
+                        learning experiences.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <div class="icon">
+                        02
+                    </div>
+
+
+                    <h3>
+                        Smart Learning
+                    </h3>
+
+
+                    <p>
+
+                        Technology-enabled classrooms and digital
+                        resources designed to make learning engaging
+                        and future-ready.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <div class="icon">
+                        03
+                    </div>
+
+
+                    <h3>
+                        Student Growth
+                    </h3>
+
+
+                    <p>
+
+                        Sports, arts, leadership and extracurricular
+                        activities help students discover talents
+                        beyond academics.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+     DIGITAL LIBRARY
+========================================================= -->
+
+    <section class="section library" id="library">
+
+        <div class="container">
+
+
+            <div class="library-box">
+
+
+                <div>
+
+                    <div class="eyebrow">
+                        Digital Library
+                    </div>
+
+
+                    <h2>
+
+                        Everything you need
+                        to keep learning.
+
+                    </h2>
+
+
+                    <p>
+
+                        Access study materials, books, previous
+                        examination papers and important educational
+                        resources from anywhere.
+
+                    </p>
+
+
+                    <a href="#" class="primary" style="display:inline-block;margin-top:25px;">
+
+                        Visit Digital Library →
+
+                    </a>
+
+                </div>
+
+
+
+                <div class="books">
+
+
+                    <div class="book">
+
+                        <span>
+                            Mathematics — Class 10
+                        </span>
+
+                        <small>
+                            PDF
+                        </small>
+
+                    </div>
+
+
+                    <div class="book">
+
+                        <span>
+                            Physics — Class 12
+                        </span>
+
+                        <small>
+                            PDF
+                        </small>
+
+                    </div>
+
+
+                    <div class="book">
+
+                        <span>
+                            Previous Examination Papers
+                        </span>
+
+                        <small>
+                            PDF
+                        </small>
+
+                    </div>
+
+
+                    <div class="book">
+
+                        <span>
+                            Science Study Material
+                        </span>
+
+                        <small>
+                            PDF
+                        </small>
+
+                    </div>
+
+
+                    <div class="book">
+
+                        <span>
+                            English Literature
+                        </span>
+
+                        <small>
+                            PDF
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+     CTA
+========================================================= -->
+
+    <section class="cta" id="admissions">
+
+
+        <div class="eyebrow">
+            Begin Your Journey
+        </div>
+
+
+        <h2>
+            Your next chapter starts here.
+        </h2>
+
+
+        <p>
+
+            Join a community where students are encouraged
+            to question, explore, create and become the best
+            version of themselves.
+
+        </p>
+
+
+        <a href="#" class="primary">
+            Explore Admissions →
+        </a>
+
+    </section>
+
+
+
+    <!-- =========================================================
+     FOOTER
+========================================================= -->
+
+    <footer>
+
+
+        <div class="footer-grid">
+
+
+            <div>
+
+                <h3>
+                    School Name
+                </h3>
+
+
+                <p class="footer-description">
+
+                    Inspiring young minds through knowledge,
+                    character, technology and confidence.
+
+                </p>
+
+            </div>
+
+
+
+            <div>
+
+                <h4>
+                    EXPLORE
+                </h4>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#">
+                    Academics
+                </a>
+
+                <a href="#">
+                    Faculty
+                </a>
+
+                <a href="#library">
+                    Library
+                </a>
+
+            </div>
+
+
+
+            <div>
+
+                <h4>
+                    RESOURCES
+                </h4>
+
+                <a href="#">
+                    Notices
+                </a>
+
+                <a href="#">
+                    Events
+                </a>
+
+                <a href="#">
+                    Gallery
+                </a>
+
+                <a href="#admissions">
+                    Admissions
+                </a>
+
+            </div>
+
+
+
+            <div>
+
+                <h4>
+                    CONTACT
+                </h4>
+
+                <p>
+                    School Address
+                </p>
+
+                <p>
+                    Gujarat, India
+                </p>
+
+                <p>
+                    +91 98765 43210
+                </p>
+
+                <p>
+                    info@school.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="copyright">
+
+            © 2026 School Name. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

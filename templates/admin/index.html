@@ -1,0 +1,195 @@
+{% extends "admin/index.html" %}
+
+{% block content %}
+<style>
+    .school-dashboard {
+        margin-bottom: 28px;
+    }
+
+    .school-dashboard h2 {
+        color: #0f1f52;
+        font-size: 25px;
+        margin-bottom: 6px;
+    }
+
+    .school-dashboard-intro {
+        color: #68727d;
+        margin-bottom: 22px;
+    }
+
+    .school-stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+        margin-bottom: 25px;
+    }
+
+    .school-stat-card {
+        position: relative;
+        overflow: hidden;
+        padding: 22px;
+        border: 1px solid #dce8f3;
+        border-radius: 14px;
+        background: #fff;
+        box-shadow: 0 5px 18px rgba(15, 31, 82, .06);
+    }
+
+    .school-stat-card::after {
+        content: "";
+        position: absolute;
+        width: 75px;
+        height: 75px;
+        right: -22px;
+        top: -22px;
+        border-radius: 50%;
+        background: #e5f4ff;
+    }
+
+    .school-stat-label {
+        position: relative;
+        z-index: 1;
+        color: #68727d;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .school-stat-number {
+        position: relative;
+        z-index: 1;
+        margin: 12px 0;
+        color: #0f1f52;
+        font-size: 32px;
+        font-weight: 800;
+    }
+
+    .school-stat-link {
+        position: relative;
+        z-index: 1;
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    .school-dashboard-links {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin-bottom: 25px;
+    }
+
+    .school-dashboard-link {
+        display: block;
+        padding: 18px;
+        border: 1px solid #dce8f3;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #fff, #f1f8ff);
+        color: #0f1f52 !important;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .school-dashboard-link:hover {
+        border-color: #8dc2e0;
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 1000px) {
+        .school-stats-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 600px) {
+
+        .school-stats-grid,
+        .school-dashboard-links {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<div class="school-dashboard">
+    <h2>School Overview</h2>
+    <p class="school-dashboard-intro">
+        Welcome to your school administration dashboard.
+        Manage enquiries, notices, events and digital resources.
+    </p>
+
+    <div class="school-stats-grid">
+        <div class="school-stat-card">
+            <div class="school-stat-label">Admission Enquiries</div>
+            <div class="school-stat-number">{{ dashboard_admissions }}</div>
+            <a class="school-stat-link" href="/admin/admissions/admissionenquiry/">
+                New: {{ dashboard_new_admissions }} · Manage enquiries →
+            </a>
+        </div>
+
+        <div class="school-stat-card">
+            <div class="school-stat-label">Contact Messages</div>
+            <div class="school-stat-number">{{ dashboard_messages }}</div>
+            <a class="school-stat-link" href="/admin/school/contactmessage/">
+                New: {{ dashboard_new_messages }} · View messages →
+            </a>
+        </div>
+
+        <div class="school-stat-card">
+            <div class="school-stat-label">Published Notices</div>
+            <div class="school-stat-number">{{ dashboard_notices }}</div>
+            <a class="school-stat-link" href="/admin/notices/notice/">
+                Manage notices →
+            </a>
+        </div>
+
+        <div class="school-stat-card">
+            <div class="school-stat-label">Upcoming / Published Events</div>
+            <div class="school-stat-number">{{ dashboard_events }}</div>
+            <a class="school-stat-link" href="/admin/events/event/">
+                Manage events →
+            </a>
+        </div>
+
+        <div class="school-stat-card">
+            <div class="school-stat-label">Active Library PDFs</div>
+            <div class="school-stat-number">{{ dashboard_books }}</div>
+            <a class="school-stat-link" href="/admin/library/bookpdf/">
+                Manage library →
+            </a>
+        </div>
+
+        <div class="school-stat-card">
+            <div class="school-stat-label">Published Gallery Images</div>
+            <div class="school-stat-number">{{ dashboard_gallery }}</div>
+            <a class="school-stat-link" href="/admin/gallery/galleryimage/">
+                Manage gallery →
+            </a>
+        </div>
+    </div>
+
+    <h2>Quick Actions</h2>
+    <p class="school-dashboard-intro">
+        Open a section directly to manage your website content.
+    </p>
+
+    <div class="school-dashboard-links">
+        <a class="school-dashboard-link" href="/admin/admissions/admissionenquiry/">
+            Manage Admissions →
+        </a>
+        <a class="school-dashboard-link" href="/admin/school/contactmessage/">
+            Review Contact Messages →
+        </a>
+        <a class="school-dashboard-link" href="/admin/notices/notice/add/">
+            + Add Notice
+        </a>
+        <a class="school-dashboard-link" href="/admin/events/event/add/">
+            + Add Event
+        </a>
+        <a class="school-dashboard-link" href="/admin/library/bookpdf/add/">
+            + Upload Library PDF
+        </a>
+        <a class="school-dashboard-link" href="/admin/gallery/galleryimage/add/">
+            + Add Gallery Image
+        </a>
+    </div>
+</div>
+
+{{ block.super }}
+{% endblock %}

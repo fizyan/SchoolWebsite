@@ -1,0 +1,536 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Digital Library | School Name{% endblock %}
+
+{% block content %}
+
+<!-- ========================= HERO ========================= -->
+
+<section class="library-hero">
+
+    <div class="library-hero-bg"></div>
+    <div class="library-hero-overlay"></div>
+
+    <div class="library-hero-container">
+
+        <div class="library-hero-content">
+
+            <div class="library-breadcrumb">
+                <a href="{% url 'school:home' %}">Home</a>
+                <i class="bi bi-chevron-right"></i>
+                <span>Digital Library</span>
+            </div>
+
+            <span class="library-eyebrow">
+                <i class="bi bi-book"></i>
+                Digital Learning
+            </span>
+
+            <h1>
+                Digital <span>Library</span>
+            </h1>
+
+            <p>
+                Explore our collection of books, study materials,
+                reference documents and educational resources.
+            </p>
+
+            <div class="library-hero-actions">
+
+                <a href="#library-books" class="btn btn-primary">
+                    Explore Library
+                    <i class="bi bi-arrow-down"></i>
+                </a>
+
+                <a href="#featured-books" class="btn btn-outline">
+                    Featured Books
+                    <i class="bi bi-star"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= SEARCH ========================= -->
+
+<section class="library-search-section">
+
+    <div class="container">
+
+        <div class="library-search-box">
+
+            <div class="library-search-icon">
+                <i class="bi bi-search"></i>
+            </div>
+
+            <form method="get" action="{% url 'library:home' %}">
+
+                <input type="text" name="q" value="{{ query }}" placeholder="Search books, authors, subjects..."
+                    autocomplete="off">
+
+                {% if selected_category %}
+                <input type="hidden" name="category" value="{{ selected_category }}">
+                {% endif %}
+
+                <button type="submit">
+                    Search
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= CATEGORIES ========================= -->
+
+<section class="library-categories">
+
+    <div class="container">
+
+        <div class="library-section-heading">
+
+            <div>
+                <span>Browse Collection</span>
+                <h2>Library Categories</h2>
+            </div>
+
+            <p>
+                Find learning resources organized by category.
+            </p>
+
+        </div>
+
+
+        <div class="library-category-grid">
+
+            <a href="{% url 'library:home' %}"
+                class="library-category-card {% if not selected_category %}active{% endif %}">
+
+                <div class="library-category-icon">
+                    <i class="bi bi-grid"></i>
+                </div>
+
+                <div>
+                    <h3>All Resources</h3>
+                    <p>View complete collection</p>
+                </div>
+
+                <i class="bi bi-arrow-up-right category-arrow"></i>
+
+            </a>
+
+
+            {% for category in categories %}
+
+            <a href="?category={{ category.id }}"
+                class="library-category-card {% if selected_category == category.id|stringformat:'s' %}active{% endif %}">
+
+                <div class="library-category-icon">
+                    <i class="bi bi-bookmark"></i>
+                </div>
+
+                <div>
+
+                    <h3>{{ category.name }}</h3>
+
+                    {% if category.description %}
+                    <p>{{ category.description|truncatechars:55 }}</p>
+                    {% else %}
+                    <p>Educational resources</p>
+                    {% endif %}
+
+                </div>
+
+                <i class="bi bi-arrow-up-right category-arrow"></i>
+
+            </a>
+
+            {% empty %}
+
+            <div class="library-empty-category">
+                <i class="bi bi-folder-x"></i>
+                <p>No categories available.</p>
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= FEATURED ========================= -->
+
+{% if featured_books %}
+
+<section class="library-featured" id="featured-books">
+
+    <div class="container">
+
+        <div class="library-section-heading light">
+
+            <div>
+                <span>Editor's Selection</span>
+                <h2>Featured Resources</h2>
+            </div>
+
+            <p>
+                Recommended learning materials from our library.
+            </p>
+
+        </div>
+
+
+        <div class="library-featured-grid">
+
+            {% for book in featured_books %}
+
+            <article class="featured-book-card">
+
+                <div class="featured-book-image">
+
+                    {% if book.cover_image %}
+
+                    <img src="{{ book.cover_image.url }}" alt="{{ book.title }}">
+
+                    {% else %}
+
+                    <div class="book-placeholder">
+                        <i class="bi bi-file-earmark-pdf"></i>
+                    </div>
+
+                    {% endif %}
+
+                    <span class="featured-badge">
+                        <i class="bi bi-star-fill"></i>
+                        Featured
+                    </span>
+
+                </div>
+
+
+                <div class="featured-book-content">
+
+                    <span class="book-category">
+                        {{ book.category.name }}
+                    </span>
+
+                    <h3>{{ book.title }}</h3>
+
+                    {% if book.author %}
+                    <p class="book-author">
+                        <i class="bi bi-person"></i>
+                        {{ book.author }}
+                    </p>
+                    {% endif %}
+
+                    <a href="{{ book.pdf_file.url }}" target="_blank" class="book-view-link">
+                        View PDF
+                        <i class="bi bi-arrow-up-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endif %}
+
+
+<!-- ========================= ALL BOOKS ========================= -->
+
+<section class="library-books" id="library-books">
+
+    <div class="container">
+
+        <div class="library-section-heading">
+
+            <div>
+                <span>Explore</span>
+
+                {% if query %}
+                <h2>Search Results</h2>
+                {% elif selected_category %}
+                <h2>Selected Resources</h2>
+                {% else %}
+                <h2>All Library Resources</h2>
+                {% endif %}
+
+            </div>
+
+            <div class="library-result-count">
+                <strong>{{ books|length }}</strong>
+                Resources
+            </div>
+
+        </div>
+
+
+        {% if books %}
+
+        <div class="library-book-grid">
+
+            {% for book in books %}
+
+            <article class="library-book-card">
+
+                <div class="library-book-cover">
+
+                    {% if book.cover_image %}
+
+                    <img src="{{ book.cover_image.url }}" alt="{{ book.title }}" loading="lazy">
+
+                    {% else %}
+
+                    <div class="library-cover-placeholder">
+
+                        <div class="pdf-icon">
+                            <i class="bi bi-file-earmark-pdf-fill"></i>
+                        </div>
+
+                        <span>PDF</span>
+
+                    </div>
+
+                    {% endif %}
+
+                    <div class="library-book-overlay">
+
+                        <a href="{{ book.pdf_file.url }}" target="_blank" class="quick-view" title="View PDF">
+                            <i class="bi bi-eye"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="library-book-content">
+
+                    <div class="library-book-top">
+
+                        <span class="book-category">
+                            {{ book.category.name }}
+                        </span>
+
+                        <span class="pdf-label">
+                            PDF
+                        </span>
+
+                    </div>
+
+
+                    <h3>{{ book.title }}</h3>
+
+
+                    {% if book.author %}
+
+                    <div class="book-meta">
+
+                        <i class="bi bi-person"></i>
+
+                        <span>{{ book.author }}</span>
+
+                    </div>
+
+                    {% endif %}
+
+
+                    {% if book.description %}
+
+                    <p>
+                        {{ book.description|truncatechars:120 }}
+                    </p>
+
+                    {% else %}
+
+                    <p>
+                        Educational resource available in our
+                        digital library.
+                    </p>
+
+                    {% endif %}
+
+
+                    <div class="library-book-footer">
+
+                        <span>
+                            <i class="bi bi-file-earmark-pdf"></i>
+                            PDF Document
+                        </span>
+
+                        <a href="{{ book.pdf_file.url }}" target="_blank">
+                            Open
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            {% endfor %}
+
+        </div>
+
+
+        {% else %}
+
+        <div class="library-empty">
+
+            <div class="library-empty-icon">
+                <i class="bi bi-search"></i>
+            </div>
+
+            <h3>No resources found</h3>
+
+            <p>
+                Try another search term or browse all library
+                categories.
+            </p>
+
+            <a href="{% url 'library:home' %}" class="btn btn-primary">
+                View All Resources
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+
+<!-- ========================= INFO ========================= -->
+
+<section class="library-info">
+
+    <div class="container">
+
+        <div class="library-info-grid">
+
+            <div class="library-info-content">
+
+                <span>Learn Without Limits</span>
+
+                <h2>
+                    Knowledge at Your
+                    <strong>Fingertips.</strong>
+                </h2>
+
+                <p>
+                    Our digital library gives students access to
+                    carefully organized educational resources from
+                    anywhere, anytime.
+                </p>
+
+                <div class="library-info-points">
+
+                    <div>
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Easy access to study materials</span>
+                    </div>
+
+                    <div>
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Organized subject categories</span>
+                    </div>
+
+                    <div>
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>PDF resources for students</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="library-info-visual">
+
+                <div class="library-visual-card card-one">
+                    <i class="bi bi-book"></i>
+                    <span>Books</span>
+                </div>
+
+                <div class="library-visual-card card-two">
+                    <i class="bi bi-file-earmark-pdf"></i>
+                    <span>PDFs</span>
+                </div>
+
+                <div class="library-visual-card card-three">
+                    <i class="bi bi-mortarboard"></i>
+                    <span>Learning</span>
+                </div>
+
+                <div class="library-visual-main">
+                    <i class="bi bi-library"></i>
+                    <strong>Digital</strong>
+                    <span>Library</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= CTA ========================= -->
+
+<section class="library-cta">
+
+    <div class="container">
+
+        <div class="library-cta-inner">
+
+            <div>
+
+                <span>Need Assistance?</span>
+
+                <h2>
+                    Looking for a specific resource?
+                </h2>
+
+                <p>
+                    Contact our school team for more information
+                    about library resources.
+                </p>
+
+            </div>
+
+            <a href="{% url 'school:contact' %}" class="btn btn-outline">
+                Contact Library
+                <i class="bi bi-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

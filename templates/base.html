@@ -1,0 +1,371 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}School Name{% endblock %}</title>
+
+    <meta name="description"
+        content="Official website of School Name — excellence in education, character and innovation.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+
+    <!-- =========================================================
+     PRELOADER
+========================================================= -->
+
+    <div id="pageLoader">
+        <div class="loader-logo">
+            <i class="bi bi-mortarboard-fill"></i>
+        </div>
+
+        <div class="loader-line"></div>
+    </div>
+
+
+    <!-- =========================================================
+     TOP BAR
+========================================================= -->
+
+    <div class="topbar">
+
+        <div class="container topbar-inner">
+
+            <div class="topbar-left">
+
+                <span>
+                    <i class="bi bi-telephone"></i>
+                    +91 98765 43210
+                </span>
+
+                <span>
+                    <i class="bi bi-envelope"></i>
+                    info@school.com
+                </span>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <a href="#">
+                    Student Portal
+                </a>
+
+                <span class="top-divider"></span>
+
+                <a href="/admin/">
+                    Admin Login
+                    <i class="bi bi-arrow-up-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+    <header class="main-header" id="mainHeader">
+
+        <div class="container">
+
+            <nav class="navbar">
+
+                <a href="{% url 'school:home' %}" class="brand">
+
+                    <div class="brand-logo">
+                        <i class="bi bi-mortarboard-fill"></i>
+                    </div>
+
+                    <div class="brand-text">
+
+                        <strong>
+                            SCHOOL
+                        </strong>
+
+                        <span>
+                            EXCELLENCE IN EDUCATION
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+
+                <div class="nav-menu" id="navMenu">
+
+                    <a href="{% url 'school:home' %}" class="nav-link">
+                        Home
+                    </a>
+
+                    <a href="{% url 'school:about' %}" class="nav-link">
+                        About
+                    </a>
+
+                    <a href="{% url 'school:academics' %}" class="nav-link">
+                        Academics
+                    </a>
+
+                    <a href="{% url 'school:faculty' %}" class="nav-link">
+                        Faculty
+                    </a>
+
+                    <a href="{% url 'library:home' %}" class="nav-link">
+                        Library
+                    </a>
+
+                    <a href="{% url 'notices:list' %}" class="nav-link">
+                        Notices
+                    </a>
+
+                    <a href="{% url 'events:list' %}" class="nav-link">
+                        Events
+                    </a>
+
+                    <a href="{% url 'gallery:home' %}" class="nav-link">
+                        Gallery
+                    </a>
+
+                    <a href="{% url 'school:contact' %}" class="nav-link">
+                        Contact
+                    </a>
+
+                    <a href="{% url 'admissions:home' %}" class="nav-admission">
+
+                        Admissions
+
+                        <i class="bi bi-arrow-up-right"></i>
+
+                    </a>
+
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+     CONTENT
+========================================================= -->
+
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+
+    <!-- =========================================================
+     FOOTER
+========================================================= -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-top">
+
+                <div class="footer-brand">
+
+                    <div class="brand footer-brand-logo">
+
+                        <div class="brand-logo">
+                            <i class="bi bi-mortarboard-fill"></i>
+                        </div>
+
+                        <div class="brand-text">
+
+                            <strong>
+                                SCHOOL
+                            </strong>
+
+                            <span>
+                                EXCELLENCE IN EDUCATION
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <p>
+                        Empowering young minds with knowledge,
+                        character and confidence to create a
+                        better tomorrow.
+                    </p>
+
+                    <div class="social-links">
+
+                        <a href="#">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>Explore</h4>
+
+                    <a href="{% url 'school:about' %}">
+                        About School
+                    </a>
+
+                    <a href="{% url 'school:academics' %}">
+                        Academics
+                    </a>
+
+                    <a href="{% url 'school:faculty' %}">
+                        Faculty
+                    </a>
+
+                    <a href="{% url 'school:facilities' %}">
+                        Facilities
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>Resources</h4>
+
+                    <a href="{% url 'library:home' %}">
+                        Digital Library
+                    </a>
+
+                    <a href="{% url 'notices:list' %}">
+                        Notices
+                    </a>
+
+                    <a href="{% url 'events:list' %}">
+                        Events
+                    </a>
+
+                    <a href="{% url 'gallery:home' %}">
+                        Gallery
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column footer-contact">
+
+                    <h4>Get In Touch</h4>
+
+                    <div class="contact-item">
+
+                        <i class="bi bi-geo-alt"></i>
+
+                        <span>
+                            School Address,<br>
+                            Gujarat, India
+                        </span>
+
+                    </div>
+
+                    <div class="contact-item">
+
+                        <i class="bi bi-telephone"></i>
+
+                        <span>
+                            +91 98765 43210
+                        </span>
+
+                    </div>
+
+                    <div class="contact-item">
+
+                        <i class="bi bi-envelope"></i>
+
+                        <span>
+                            info@school.com
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © {% now "Y" %} School Name. All Rights Reserved.
+                </span>
+
+                <div>
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#">
+                        Terms
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="{% static 'js/main.js' %}"></script>
+
+    {% block extra_js %}
+    {% endblock %}
+
+</body>
+
+</html>
